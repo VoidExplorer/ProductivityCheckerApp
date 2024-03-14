@@ -38,7 +38,6 @@ public class Todo {
         return description;
     }
 
-    
-
 
 }
+
