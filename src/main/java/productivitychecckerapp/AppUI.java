@@ -1,23 +1,16 @@
 package productivitychecckerapp;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+public class AppUI {
+    public static void main(String[]args){
+       Todo todo1 = new Todo("First Todo");
+       todo1.setDescription("This good description");
+       Task task1 = new Task("Study for Quiz","15 March");
+       Task task2 = new Task("Study for Midterm", "1 April");
+       todo1.addTask(task1);
+       todo1.addTask(task2);
 
-import java.io.IOException;
+       System.out.println(todo1.getTask(0).getTaskText());
+       // new comment
 
-public class AppUI extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(AppUI.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }
