@@ -1,4 +1,4 @@
-package productivitychecckerapp.demo;
+package productivitychecckerapp;
 
 public class Task {
     private String taskText, dueTime;

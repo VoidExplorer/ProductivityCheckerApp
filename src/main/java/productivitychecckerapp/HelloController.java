@@ -1,4 +1,4 @@
-package productivitychecckerapp.demo;
+package productivitychecckerapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

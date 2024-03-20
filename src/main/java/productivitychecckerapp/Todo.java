@@ -1,4 +1,4 @@
-package productivitychecckerapp.demo;
+package productivitychecckerapp;
 
 import java.util.ArrayList;
 
