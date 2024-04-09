@@ -14,7 +14,6 @@ import java.util.Objects;
 public class SceneController{
     private Stage stage;
     private Scene scene;
-    private Parent root;
 
     public void switchToSignUp(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signup.fxml")));
@@ -30,7 +29,7 @@ public class SceneController{
     @FXML
     private TextField passwordField;
     @FXML
-    private void signup(ActionEvent event) {
+    private void signup() {
 
         System.out.println(usernameField.getText());
         System.out.println(passwordField.getText());
