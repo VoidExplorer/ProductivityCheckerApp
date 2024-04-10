@@ -1,4 +1,4 @@
-package productivitychecckerapp;
+package productivitycheckerapp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

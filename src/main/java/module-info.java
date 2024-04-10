@@ -3,6 +3,6 @@ module productivitychecckerapp.demo {
     requires javafx.fxml;
     requires javafx.media;
 
-    opens productivitychecckerapp to javafx.fxml;
-    exports productivitychecckerapp;
+    opens productivitycheckerapp to javafx.fxml;
+    exports productivitycheckerapp;
 }

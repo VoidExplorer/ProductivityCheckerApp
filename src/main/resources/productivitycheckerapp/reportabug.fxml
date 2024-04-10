@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivitychecckerapp.SceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivitycheckerapp.SceneController">
    <children>
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToSettings" text="Go Back" />
       <ImageView fitHeight="272.0" fitWidth="498.0" layoutX="53.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">

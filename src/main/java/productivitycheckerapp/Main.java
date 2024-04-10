@@ -1,4 +1,4 @@
-package productivitychecckerapp;
+package productivitycheckerapp;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
