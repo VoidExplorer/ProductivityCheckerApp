@@ -28,14 +28,10 @@ public class User {
 
 
     public boolean equals(String username,String password) {
-        if(username==this.username){
-            return true;
-        } else if(password==this.password) {
-            return true;
+        return (username==this.username && password ==this.password);
 
         }
-        return false;
-    }
+
     ArrayList<Todo> todos = new ArrayList<>();
 
     public ArrayList<Todo> getTodos() {
