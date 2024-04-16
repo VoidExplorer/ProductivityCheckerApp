@@ -12,8 +12,17 @@ import java.util.Objects;
 public class Main extends Application {
     public static void readDb(){
         ArrayList<Todo> todos = new ArrayList<>();
-       // for (int i = 0; i < ; i++) {
-       // }
+        ArrayList<User> users = new ArrayList<>();
+        
+    }
+    public static void addUserToDB(){
+
+    }
+    public static void addTodoToDB(){
+
+    }
+    public static void addTaskToDB(){
+
     }
     @Override
     public void start(Stage stage) throws IOException {
