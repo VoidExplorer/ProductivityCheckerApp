@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EFF6EE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Avatar">
+   <children>
+      <Circle fill="#c5ced643" layoutX="550.0" layoutY="27.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button layoutX="8.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-radius: 15px;" text="New" />
+      <Button layoutX="87.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: 4D9078; -fx-background-radius: 15px;" text="Pages" />
+      <TextField layoutX="349.0" layoutY="14.0" prefHeight="26.0" prefWidth="151.0" style="-fx-background-color: white; -fx-background-radius: 15px;" />
+      <Icon content="SEARCH" layoutX="478.0" layoutY="14.0" />
+      <Icon content="ACCOUNT_CIRCLE" layoutX="526.0" layoutY="3.0" prefHeight="48.0" prefWidth="48.0" />
+   </children>
+</AnchorPane>
