@@ -18,6 +18,10 @@ public class Main extends Application {
     public static void addUserToDB(){
 
     }
+
+    public static void removeUserfromDB() {
+
+    }
     public static void addTodoToDB(){
 
     }
@@ -33,7 +37,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         readDb();
         launch();
     }
