@@ -30,6 +30,15 @@ public class Settings {
             removeUserfromDB();
     }
 
+    @FXML
+    static String switchUser;
+    @FXML
+    static String switchPassword;
+    public static void switchUser(User user) {
+        if (user.getPassword() == currentpassword && acknowledge.isSelected());
+            // code to switch user
+    }
+
 
 
 }
