@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -37,7 +38,8 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException {
+        database.connect();
         readDb();
         launch();
     }
