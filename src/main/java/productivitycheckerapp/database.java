@@ -8,8 +8,8 @@ public class database {
 
     public static void connect() throws SQLException {
         try {
-            String jdbcurl = "jdbc:sqlite:identifier.sqlite";
-            Connection connection = DriverManager.getConnection(jdbcurl);
+            String jdbcUrl = "jdbc:sqlite:identifier.sqlite";
+            Connection connection = DriverManager.getConnection(jdbcUrl);
         } catch (SQLException e) {
             e.printStackTrace();
         }
