@@ -11,7 +11,7 @@ public class database {
             String jdbcUrl = "jdbc:sqlite:identifier.sqlite";
             connection = DriverManager.getConnection(jdbcUrl);
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.getCause();
         }
     }
 
