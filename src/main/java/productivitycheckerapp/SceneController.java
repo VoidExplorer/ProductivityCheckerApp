@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class SceneController{
@@ -29,11 +30,10 @@ public class SceneController{
     @FXML
     private TextField passwordField;
     @FXML
-    private void signup() {
-
-        System.out.println(usernameField.getText());
-        System.out.println(passwordField.getText());
-
+    private void signup() throws SQLException {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+        database.addUser(username, password);
     }
 
     public void switchToSettings(ActionEvent event) throws IOException {
