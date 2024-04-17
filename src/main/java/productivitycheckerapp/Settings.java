@@ -3,7 +3,7 @@ package productivitycheckerapp;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 
-import static productivitycheckerapp.Main.removeUserfromDB;
+import static productivitycheckerapp.Settings.deleteUser;
 
 public class Settings {
 
@@ -27,7 +27,7 @@ public class Settings {
     static CheckBox acknowledge;
     public static void deleteUser(User user) {
         if (user.getPassword() == currentpassword && acknowledge.isSelected())
-            removeUserfromDB();
+            deleteUser(user);
     }
 
     @FXML

@@ -4,10 +4,11 @@ import java.util.*;
 public class User {
     private String username;
     private String password;
-    public User(String username,String password){
+    private ArrayList<Todo> todos = new ArrayList<>();
+    public User(String username,String password,ArrayList<Todo> todos){
         this.password=password;
         this.username=username;
-
+        this.todos = todos;
     }
 
     public void setUsername(String username) {
@@ -31,8 +32,6 @@ public class User {
         return (username==this.username && password ==this.password);
 
         }
-
-    ArrayList<Todo> todos = new ArrayList<>();
 
     public ArrayList<Todo> getTodos() {
         return todos;

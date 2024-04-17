@@ -9,26 +9,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
 public class Main extends Application {
-    public static void readDb(){
-        ArrayList<Todo> todos = new ArrayList<>();
-        ArrayList<User> users = new ArrayList<>();
-        
-    }
-    public static void addUserToDB(){
 
-    }
 
-    public static void removeUserfromDB() {
-
-    }
-    public static void addTodoToDB(){
-
-    }
-    public static void addTaskToDB(){
-
-    }
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("welcome.fxml")));
@@ -40,7 +29,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
         database.connect();
-        readDb();
+        database.readDb();
         launch();
     }
 

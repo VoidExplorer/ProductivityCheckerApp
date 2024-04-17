@@ -1,6 +1,7 @@
 package productivitycheckerapp;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class database {
 
@@ -14,7 +15,18 @@ public class database {
             e.getCause();
         }
     }
-
+    public static void readDb() throws SQLException {
+        ArrayList<User> users = new ArrayList<>();
+        String SELECT_USER = "SELECT UserName, Password from users";
+        PreparedStatement ps = connection.prepareStatement(SELECT_USER);
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.getResultSet();
+        while (resultSet.next()) {
+            System.out.println(
+                    resultSet.getString("UserName") + "\t" +
+                            resultSet.getString("Password"));
+        }
+    }
     public static void addUser(String userName, String password) throws SQLException {
         String INSERT_USER = "INSERT INTO users(UserName, Password) VALUES(?, ?)";
         int nRows = 0;
