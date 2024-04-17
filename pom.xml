@@ -48,6 +48,18 @@
             <artifactId>commons-io</artifactId>
             <version>2.12.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.45.3.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.vatbub/mslinks -->
+        <dependency>
+            <groupId>com.github.vatbub</groupId>
+            <artifactId>mslinks</artifactId>
+            <version>1.0.6.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
