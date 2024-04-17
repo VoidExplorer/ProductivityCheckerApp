@@ -24,4 +24,13 @@ public class database {
         ps.setString(2, password);
         nRows = ps.executeUpdate();
     }
+
+    public static void deleteUser(String userName) throws SQLException {
+        String DELETE_USER = "DELETE FROM users WHERE UserName = ?";
+        int nRows = 0;
+        PreparedStatement ps = connection.prepareStatement(DELETE_USER);
+        Statement statement = connection.createStatement();
+        ps.setString(1, userName);
+        nRows = ps.executeUpdate();
+    }
 }

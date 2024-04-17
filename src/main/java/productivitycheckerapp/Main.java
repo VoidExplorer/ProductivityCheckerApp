@@ -40,7 +40,8 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
         database.connect();
-        database.addUser("Ali", "bstrma");
+        database.addUser("Ali", "bstrmsa");
+        database.deleteUser("Fares");
         readDb();
         launch();
     }
