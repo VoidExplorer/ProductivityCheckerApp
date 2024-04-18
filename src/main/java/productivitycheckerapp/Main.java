@@ -20,7 +20,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("welcome.fxml")));
+        // to be changed later , the program will check if the user is already signed in and will load main page
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signup.fxml")));
         Scene scene = new Scene(root);
         stage.setTitle("Productivity Checker App");
         stage.setScene(scene);
@@ -29,7 +30,6 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
         database.connect();
-        database.readDb();
         launch();
     }
 
