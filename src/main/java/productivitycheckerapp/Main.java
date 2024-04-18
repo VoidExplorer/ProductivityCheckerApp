@@ -31,6 +31,8 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
         database.connect();
         database.readDb();
+        System.out.println( database.users.get(0).getUsername());
+        System.out.println( database.users.get(0).getTodos().get(0).getTitle());
         launch();
     }
 

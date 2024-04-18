@@ -15,21 +15,40 @@ public class database {
             e.getCause();
         }
     }
+    static ArrayList<User> users = new ArrayList<>();
+
     public static void readDb() throws SQLException {
-        ArrayList<User> users = new ArrayList<>();
         String SELECT_USER = "SELECT * from users";
-        PreparedStatement ps = connection.prepareStatement(SELECT_USER);
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = ps.executeQuery();
-        System.out.println(resultSet.getString(2));
-        while (resultSet.next()) {
-            System.out.println(
-                    resultSet.getString("UserName") + "\t" +
-                            resultSet.getString("Password"));
+        try (PreparedStatement ps = connection.prepareStatement(SELECT_USER);
+             ResultSet resultSet = ps.executeQuery()) {
+            while (resultSet.next()) {
+                ArrayList<Todo> todos = new ArrayList<>();
+                String SELECT_TODO = "SELECT * from todos WHERE username = ?";
+                try (PreparedStatement pss = connection.prepareStatement(SELECT_TODO)) {
+                    pss.setString(1, resultSet.getString("UserName"));
+                    try (ResultSet rresultSet = pss.executeQuery()) {
+                        while (rresultSet.next()) {
+                            Todo todo = new Todo(rresultSet.getInt("TodoId"), rresultSet.getString("Title"), rresultSet.getString("Description"));
+                            String SELECT_TASK = "SELECT * from tasks WHERE TodoId = ?";
+                            try (PreparedStatement psss = connection.prepareStatement(SELECT_TASK)) {
+                                psss.setInt(1, rresultSet.getInt("TodoId"));
+                                try (ResultSet rrresultSet = psss.executeQuery()) {
+                                    while (rrresultSet.next()) {
+                                        Task task = new Task(rrresultSet.getString("Task"), rrresultSet.getString("DueTime"));
+                                        todo.addTask(task);
+                                    }
+                                }
+                            }
+                            todos.add(todo);
+                        }
+                    }
+                }
+                User user = new User(resultSet.getString("UserName"), resultSet.getString("Password"), todos);
+                users.add(user);
+            }
         }
-
-
     }
+
 
     public static void readTodos() throws SQLException {
         String SELECT_TODO = "SELECT * from todos";
@@ -44,6 +63,8 @@ public class database {
                             resultSet.getString("Title") +"\t" +
                             resultSet.getString("Description"));
         }
+
+
     }
 
     public static void addUser(String userName, String password) throws SQLException {

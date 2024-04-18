@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class Todo {
     private String title, description;
+    private int id;
     ArrayList<Task> tasks = new ArrayList<>();
-    Todo (String title, String description) {
+    Todo (int id,String title, String description) {
         this.title = title;
         this.description = description;
     }
