@@ -81,15 +81,37 @@
             <artifactId>mslinks</artifactId>
             <version>1.0.6.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.gluonhq/charm -->
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx -->
         <dependency>
-            <groupId>com.gluonhq</groupId>
-            <artifactId>charm</artifactId>
-            <version>6.2.3</version>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx</artifactId>
+            <version>8.9</version>
         </dependency>
-
-
-
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialicons -->
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-materialicons</artifactId>
+            <version>2.2.0-9.1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialdesignfont -->
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-materialdesignfont</artifactId>
+            <version>2.0.26-9.1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-commons -->
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-commons</artifactId>
+            <version>9.1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-fontawesome -->
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-fontawesome</artifactId>
+            <version>4.7.0-9.1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.gluonhq/charm -->
 
     </dependencies>
 
