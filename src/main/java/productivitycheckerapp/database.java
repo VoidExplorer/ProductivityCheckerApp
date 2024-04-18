@@ -27,7 +27,25 @@ public class database {
                     resultSet.getString("UserName") + "\t" +
                             resultSet.getString("Password"));
         }
+
+
     }
+
+    public static void readTodos() throws SQLException {
+        String SELECT_TODO = "SELECT * from todos";
+        PreparedStatement ps = connection.prepareStatement(SELECT_TODO);
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = ps.executeQuery();
+        System.out.println(resultSet.getString(2));
+        while (resultSet.next()) {
+            System.out.println(
+                    resultSet.getString("UserName") + "\t" +
+                            resultSet.getString("TodoID") +"\t" +
+                            resultSet.getString("Title") +"\t" +
+                            resultSet.getString("Description"));
+        }
+    }
+
     public static void addUser(String userName, String password) throws SQLException {
         String INSERT_USER = "INSERT INTO users(UserName, Password) VALUES(?, ?)";
         int nRows = 0;
