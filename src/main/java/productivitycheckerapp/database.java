@@ -46,4 +46,16 @@ public class database {
         ps.setString(1, userName);
         nRows = ps.executeUpdate();
     }
+
+    public static void addTodo(String userName, String TodoID, String Title, String Description) throws SQLException {
+        String INSERT_USER = "INSERT INTO users(UserName, TodoID, Title, Description) VALUES(?, ?, ?, ?)";
+        int nRows = 0;
+        PreparedStatement ps = connection.prepareStatement(INSERT_USER);
+        Statement statement = connection.createStatement();
+        ps.setString(1, userName);
+        ps.setString(2, TodoID);
+        ps.setString(3, Title);
+        ps.setString(4, Description);
+        nRows = ps.executeUpdate();
+    }
 }
