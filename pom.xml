@@ -14,6 +14,15 @@
         <junit.version>5.10.0</junit.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>charm-glisten</id>
+            <name>charm-glisten Repository</name>
+            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -72,6 +81,15 @@
             <artifactId>mslinks</artifactId>
             <version>1.0.6.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.gluonhq/charm -->
+        <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>charm</artifactId>
+            <version>6.2.3</version>
+        </dependency>
+
+
+
 
     </dependencies>
 
