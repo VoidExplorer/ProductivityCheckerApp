@@ -11,13 +11,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6F65B8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivitycheckerapp.SceneController">
    <children>
-      <TextField fx:id="usernameField" layoutX="278.0" layoutY="132.0" promptText="username" style="-fx-background-radius: 15PX; -fx-background-color: white;" />
-      <Text fill="WHITE" layoutX="172.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Username" />
-      <Text fill="#fffbfb" layoutX="171.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Password:" />
-      <Button layoutX="300.0" layoutY="242.0" mnemonicParsing="false" onAction="#signup" style="-fx-background-radius: 15px; -fx-background-color: white;" text="Login" textFill="#171717f2" />
-      <Text fill="#eeeeee" layoutX="327.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" wrappingWidth="53.5" />
+      <TextField fx:id="usernameField" layoutX="248.0" layoutY="130.0" promptText="username" style="-fx-background-radius: 15PX; -fx-background-color: white;" />
+      <Text fill="WHITE" layoutX="136.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Username" />
+      <Text fill="#fffbfb" layoutX="135.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Password:" />
+      <Button layoutX="287.0" layoutY="250.0" mnemonicParsing="false" onAction="#signup" style="-fx-background-radius: 15px; -fx-background-color: white;" text="Login" textFill="#171717f2" />
+      <Text fill="#eeeeee" layoutX="324.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" wrappingWidth="53.5" />
       <Text layoutX="172.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" wrappingWidth="152.0" />
-      <PasswordField fx:id="passwordField" layoutX="278.0" layoutY="186.0" promptText="password" style="-fx-background-radius: 15px; -fx-background-color: white;" />
+      <PasswordField fx:id="passwordField" layoutX="248.0" layoutY="187.0" promptText="password" style="-fx-background-radius: 15px; -fx-background-color: white;" />
       <FontAwesomeIconView glyphName="GEAR" layoutX="568.0" layoutY="382.0" onMouseClicked="#switchToSettings" size="18.0" />
       <ImageView fitHeight="101.0" fitWidth="122.0" layoutX="239.0" layoutY="14.0">
          <image>
