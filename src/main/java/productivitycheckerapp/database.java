@@ -17,10 +17,11 @@ public class database {
     }
     public static void readDb() throws SQLException {
         ArrayList<User> users = new ArrayList<>();
-        String SELECT_USER = "SELECT UserName, Password from users";
+        String SELECT_USER = "SELECT * from users";
         PreparedStatement ps = connection.prepareStatement(SELECT_USER);
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.getResultSet();
+        ResultSet resultSet = ps.executeQuery();
+        System.out.println(resultSet.getString(2));
         while (resultSet.next()) {
             System.out.println(
                     resultSet.getString("UserName") + "\t" +
