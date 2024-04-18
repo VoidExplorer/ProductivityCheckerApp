@@ -31,8 +31,9 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
         database.connect();
         database.readDb();
-        System.out.println( database.users.get(0).getUsername());
-        System.out.println( database.users.get(0).getTodos().get(0).getTitle());
+        System.out.println("Username: " + database.users.get(1).getUsername());
+        System.out.println("TodoTitle: " + database.users.get(1).getTodos().get(0).getTitle());
+        System.out.println("TodoDescription: "+ database.users.get(1).getTodos().get(0).getDescription());
         launch();
     }
 
