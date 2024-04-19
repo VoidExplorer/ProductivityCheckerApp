@@ -54,6 +54,15 @@ public class SceneController{
         stage.show();
     }
 
+    public void addTask(ActionEvent event) throws IOException {
+        Stage popup = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("settings.fxml")));
+        Scene scene1 = new Scene(root);
+        popup.setTitle("Add Note");
+        popup.setScene(scene1);
+        popup.show();
+    }
+
 
 
 }
