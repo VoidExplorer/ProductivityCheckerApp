@@ -7,7 +7,7 @@
     <groupId>ProductivityChecckerApp</groupId>
     <artifactId>ProductivityCheckerApp</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>demo</name>
+    <name>productivitycheckerapp</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -141,7 +141,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>productivitycheckerapp.demo/productivitycheckerapp.Main
+                            <mainClass>productivitycheckerapp.productivitycheckerapp/productivitycheckerapp.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
