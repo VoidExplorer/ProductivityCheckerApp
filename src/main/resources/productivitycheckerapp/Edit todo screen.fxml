@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Icon?>
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivitycheckerapp.EditTodoScreen">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EFF6EE;">
          <children>
-            <Button layoutX="88.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-radius: 15px; -fx-background-color: #8B79E3;" text="New" />
-            <Button layoutX="13.0" layoutY="12.0" mnemonicParsing="false" style="-fx-background-color: #8B79E3;" text="Pages" />
             <TextField layoutX="349.0" layoutY="14.0" opacity="0.4" prefHeight="26.0" prefWidth="151.0" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Search" />
-            <Button layoutX="258.0" layoutY="256.0" minHeight="17.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" style="-fx-background-radius: 20px; -fx-background-color: #ACE88B;" text="Edit Todo" />
-            <Icon content="SEARCH" layoutX="478.0" layoutY="15.0" />
-            <Icon content="SETTINGS" layoutX="564.0" layoutY="14.0" />
             <TextField layoutX="230.0" layoutY="145.0" opacity="0.5" style="-fx-background-color: white; -fx-background-radius: 20px;" />
             <Text layoutX="175.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
             <TextField layoutX="230.0" layoutY="192.0" style="-fx-background-color: white; -fx-background-radius: 20px;" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text layoutY="-12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="25.98307228088379" />
             <Text layoutX="148.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+            <JFXButton layoutX="14.0" layoutY="13.0" style="-fx-background-color: #8B79E3;" text="Pages" />
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="474.0" layoutY="32.0" size="15" wrappingWidth="25.846355438232422" />
+            <JFXButton layoutX="82.0" layoutY="13.0" style="-fx-background-color: #8B79E3; -fx-background-radius: 15px;" text="New" />
+            <FontAwesomeIconView glyphName="GEAR" layoutX="558.0" layoutY="35.0" size="20" />
+            <JFXButton layoutX="264.0" layoutY="249.0" style="-fx-background-color: #ACE88B; -fx-background-radius: 20PX;" text="Edit Todo" />
          </children>
       </AnchorPane>
    </children>
