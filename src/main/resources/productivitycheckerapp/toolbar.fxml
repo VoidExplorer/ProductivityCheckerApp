@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="drawerPane" prefHeight="400.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
+   <children>
+      <JFXButton onAction="#switchToSettings" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: #30323D;" text="Settings" textFill="WHITE" />
+   </children>
+</VBox>

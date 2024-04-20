@@ -1,4 +1,4 @@
-package productivitycheckerapp;
+package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +10,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import productivitycheckerapp.database;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6F65B8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivitycheckerapp.SceneController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6F65B8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
    <children>
       <TextField fx:id="usernameField" layoutX="248.0" layoutY="130.0" promptText="username" style="-fx-background-radius: 15PX; -fx-background-color: white;" />
       <Text fill="WHITE" layoutX="136.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Username" />
@@ -18,7 +20,6 @@
       <Text fill="#eeeeee" layoutX="324.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" wrappingWidth="53.5" />
       <Text layoutX="172.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" wrappingWidth="152.0" />
       <PasswordField fx:id="passwordField" layoutX="248.0" layoutY="187.0" promptText="password" style="-fx-background-radius: 15px; -fx-background-color: white;" />
-      <FontAwesomeIconView glyphName="GEAR" layoutX="568.0" layoutY="382.0" onMouseClicked="#switchToSettings" size="18.0" />
       <ImageView fitHeight="101.0" fitWidth="122.0" layoutX="239.0" layoutY="14.0">
          <image>
             <Image url="@Todo.png" />

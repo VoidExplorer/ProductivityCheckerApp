@@ -1,4 +1,4 @@
-module productivitychecckerapp.demo {
+module productivitychecckerapp {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
@@ -10,4 +10,6 @@ module productivitychecckerapp.demo {
 
     opens productivitycheckerapp to javafx.fxml;
     exports productivitycheckerapp;
+    exports controllers;
+    opens controllers to javafx.fxml;
 }

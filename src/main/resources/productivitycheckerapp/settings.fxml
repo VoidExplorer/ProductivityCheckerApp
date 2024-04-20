@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivitycheckerapp.SceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
    <children>
       <CheckBox layoutX="14.0" layoutY="68.0" mnemonicParsing="false" text="Run on Startup" />
       <CheckBox layoutX="14.0" layoutY="106.0" mnemonicParsing="false" text="Automatically evaluate mathematical expressions" />

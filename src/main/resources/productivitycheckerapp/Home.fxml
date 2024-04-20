@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EFF6EE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivitycheckerapp.SceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EFF6EE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
    <children>
       <Button layoutX="91.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-radius: 15px; -fx-background-color: #8B79E3;" text="New" />
       <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #4D9078; -fx-background-color: #8B79E3;" text="Pages" />
