@@ -25,5 +25,15 @@
             <Image url="@Todo.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="drawerBack" layoutX="440.0" prefHeight="400.0" prefWidth="161.0" style="-fx-background-color: #4D5061;">
+         <children>
+            <VBox fx:id="drawerPaneTest" layoutX="25.0" layoutY="50.0" prefHeight="321.0" prefWidth="122.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <JFXButton alignment="TOP_CENTER" onAction="#switchToSettings" prefHeight="50.0" prefWidth="122.0" style="-fx-background-color: #30323D;" textFill="WHITE" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <JFXHamburger fx:id="menu" layoutX="553.0" layoutY="20.0" />
    </children>
 </AnchorPane>
