@@ -34,7 +34,7 @@
                </effect>
             </ImageView>
             <Text layoutX="125.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" />
-            <Text fill="#fffefe" layoutX="91.0" layoutY="96.0" opacity="0.69" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TODO" textAlignment="CENTER" wrappingWidth="90.478515625">
+            <Text fill="#fffefe" layoutX="84.0" layoutY="100.0" opacity="0.69" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TODO" textAlignment="CENTER" wrappingWidth="117.478515625">
                <effect>
                   <Lighting>
                      <bumpInput>
@@ -46,7 +46,7 @@
                   </Lighting>
                </effect>
                <font>
-                  <Font size="27.0" />
+                  <Font size="35.0" />
                </font>
             </Text>
          </children></AnchorPane>
