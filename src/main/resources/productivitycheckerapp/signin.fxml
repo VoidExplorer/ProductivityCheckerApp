@@ -48,7 +48,7 @@
       <Hyperlink layoutX="477.0" layoutY="347.0" text="Sign up" />
       <Text layoutX="336.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an Account?" />
       <FontAwesomeIconView fill="#594be8" glyphName="USERS" layoutX="431.0" layoutY="66.0" size="35" />
-      <Text fill="#594be8" layoutX="404.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
+      <Text fill="#594be8" layoutX="403.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page">
          <font>
             <Font size="20.0" />
          </font>
