@@ -7,7 +7,6 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Light?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -43,8 +42,8 @@
                </font>
             </Text>
          </children></AnchorPane>
-      <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="358.0" layoutY="169.0" size="17" wrappingWidth="10.5" />
-      <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="356.0" layoutY="237.0" size="15" />
+      <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="331.0" layoutY="168.0" size="17" wrappingWidth="10.5" />
+      <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="329.0" layoutY="237.0" size="15" />
       <JFXButton layoutX="423.0" layoutY="276.0" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="Login" textFill="WHITE" />
       <Hyperlink layoutX="477.0" layoutY="347.0" text="Sign up" />
       <Text layoutX="336.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an Account?" />
@@ -54,7 +53,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="382.0" layoutY="211.0" opacity="0.6" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8; -fx-border-width: 0px;" textLimit="15" />
-      <MFXTextField floatMode="BORDER" floatingText="Username" layoutX="382.0" layoutY="142.0" opacity="0.6" prefHeight="41.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8; -fx-border-width: 0px;" textLimit="15" />
+      <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="360.0" layoutY="211.0" opacity="0.6" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+      <MFXTextField floatMode="BORDER" floatingText="Username" layoutX="360.0" layoutY="141.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
    </children>
 </AnchorPane>

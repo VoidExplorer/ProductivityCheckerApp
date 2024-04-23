@@ -6,13 +6,12 @@
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Light?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/TextFields.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.signupController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/TextFields.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.signupController">
    <children>
       <AnchorPane layoutX="-14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -45,22 +44,22 @@
                   </Text>
                </children>
             </AnchorPane>
-            <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="365.0" layoutY="187.0" size="17" wrappingWidth="10.5" />
-            <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="363.0" layoutY="246.0" size="15" />
-            <JFXButton layoutX="424.0" layoutY="342.0" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="SignUp" textFill="WHITE" />
+            <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="343.0" layoutY="186.0" size="17" wrappingWidth="10.5" />
+            <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="341.0" layoutY="247.0" size="15" text="" />
+            <JFXButton layoutX="424.0" layoutY="351.0" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="SignUp" textFill="WHITE" />
             <Text fill="#594be8" layoutX="398.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SignUp Page">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="387.0" layoutY="220.0" opacity="0.6" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8; -fx-border-width: 0px;" textLimit="15" />
-            <MFXTextField floatMode="BORDER" floatingText="Username" layoutX="389.0" layoutY="161.0" opacity="0.6" prefHeight="41.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8; -fx-border-width: 0px;" textLimit="15" />
-            <MFXTextField floatMode="BORDER" floatingText="FirstName" layoutX="389.0" layoutY="48.0" opacity="0.6" prefHeight="41.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8; -fx-border-width: 0px;" textLimit="15" />
-            <MFXTextField floatMode="BORDER" floatingText="LastName" layoutX="389.0" layoutY="107.0" opacity="0.6" prefHeight="41.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8; -fx-border-width: 0px;" textLimit="15" />
-            <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="ReEnter-YourPassword" graphicTextGap="5.0" layoutX="382.0" layoutY="277.0" opacity="0.6" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8; -fx-border-width: 0px;" textLimit="15" />
-            <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="363.0" layoutY="303.0" size="15" />
-            <FontAwesomeIconView fill="#594be8" glyphName="USERS" layoutX="365.0" layoutY="133.0" size="17" wrappingWidth="10.5" />
-            <FontAwesomeIconView fill="#594be8" glyphName="USERS" layoutX="365.0" layoutY="74.0" size="17" wrappingWidth="10.5" /></children>
+            <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="378.0" layoutY="220.0" opacity="0.6" prefHeight="42.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+            <MFXTextField floatMode="BORDER" floatingText="Username" layoutX="378.0" layoutY="160.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+            <MFXTextField floatMode="BORDER" floatingText="FirstName" layoutX="378.0" layoutY="47.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+            <MFXTextField floatMode="BORDER" floatingText="LastName" layoutX="378.0" layoutY="106.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+            <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="ReEnter-YourPassword" graphicTextGap="5.0" layoutX="375.0" layoutY="277.0" opacity="0.6" prefHeight="42.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+            <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="341.0" layoutY="304.0" size="15" />
+            <FontAwesomeIconView fill="#594be8" glyphName="USERS" layoutX="338.0" layoutY="132.0" size="17" wrappingWidth="10.5" />
+            <FontAwesomeIconView fill="#594be8" glyphName="USERS" layoutX="338.0" layoutY="74.0" size="17" wrappingWidth="10.5" /></children>
       </AnchorPane>
    </children>
 </AnchorPane>
