@@ -53,7 +53,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="360.0" layoutY="211.0" opacity="0.6" prefHeight="42.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+      <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="360.0" layoutY="211.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
       <MFXTextField floatMode="BORDER" floatingText="Username" layoutX="360.0" layoutY="141.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
    </children>
 </AnchorPane>
