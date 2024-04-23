@@ -1,10 +1,17 @@
 package productivitycheckerapp;
 
+import fr.brouillard.oss.cssfx.CSSFX;
+import io.github.palexdev.materialfx.theming.JavaFXThemes;
+import io.github.palexdev.materialfx.theming.MaterialFXStylesheets;
+import io.github.palexdev.materialfx.theming.UserAgentBuilder;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,12 +27,25 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        // to be changed later , the program will check if the user is already signed in and will load main page
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signup.fxml")));
+        CSSFX.start();
+
+        UserAgentBuilder.builder()
+                .themes(JavaFXThemes.MODENA)
+                .themes(MaterialFXStylesheets.forAssemble(true))
+                .setDeploy(true)
+                .setResolveAssets(true)
+                .build()
+                .setGlobal();
+
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
+        Parent root = loader.load();
         Scene scene = new Scene(root);
-        stage.setTitle("Productivity Checker App");
+        scene.setFill(Color.TRANSPARENT);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
+        stage.setTitle("Productivity Checker App");
         stage.show();
+
     }
 
     public static void main(String[] args) throws SQLException {
