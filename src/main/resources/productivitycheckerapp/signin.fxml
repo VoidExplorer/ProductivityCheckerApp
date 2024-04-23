@@ -36,9 +36,9 @@
                   <Font size="12.0" />
                </font>
             </FontAwesomeIconView>
-            <Text fill="#594be8" layoutX="111.0" layoutY="242.0" text="Note" textAlignment="CENTER" wrappingWidth="53.5">
+            <Text fill="WHITE" layoutX="92.0" layoutY="322.0" text="Notes" textAlignment="CENTER" wrappingWidth="100.5">
                <font>
-                  <Font size="20.0" />
+                  <Font size="27.0" />
                </font>
             </Text>
          </children></AnchorPane>
