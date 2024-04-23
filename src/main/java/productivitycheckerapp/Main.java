@@ -41,7 +41,6 @@ public class Main extends Application {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
-        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.setTitle("Productivity Checker App");
         stage.show();
