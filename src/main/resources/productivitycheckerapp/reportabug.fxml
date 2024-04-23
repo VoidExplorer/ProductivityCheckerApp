@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="272.0" fitWidth="498.0" layoutX="53.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@bugreport.gif" />
+
          </image>
       </ImageView>
       <JFXButton layoutX="14.0" layoutY="360.0" style="-fx-background-color: #C9E88B; -fx-background-radius: 20px;" text="Go Back" />
