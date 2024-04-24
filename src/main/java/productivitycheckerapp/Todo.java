@@ -9,7 +9,7 @@ public class Todo {
     Todo (int id,String title, String description) {
         this.title = title;
         this.description = description;
-        this.id = id;
+        this.id =id;
 
     }
     Todo (String title) {
