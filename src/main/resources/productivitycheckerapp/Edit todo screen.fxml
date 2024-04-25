@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
    <children>
-      <AnchorPane layoutX="4.0" layoutY="4.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EFF6EE;">
+      <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EFF6EE;">
          <children>
             <TextField layoutX="349.0" layoutY="14.0" opacity="0.4" prefHeight="26.0" prefWidth="151.0" promptText="Search" style="-fx-background-color: white; -fx-background-radius: 15px;" />
             <Text layoutY="-12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="25.98307228088379" />
@@ -22,14 +22,14 @@
             <JFXButton layoutX="275.0" layoutY="297.0" style="-fx-background-color: #8B79E3; -fx-background-radius: 20PX;" text="Edit Todo" textFill="#fffefe" />
             <MFXTextField floatMode="BORDER" floatingText="Title" layoutX="223.0" layoutY="138.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
             <MFXTextField floatMode="BORDER" floatingText="Description" layoutX="223.0" layoutY="215.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-            <ImageView fitHeight="33.0" fitWidth="32.0" layoutX="179.0" layoutY="219.0">
+            <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="167.0" layoutY="138.0">
                <image>
-                  <Image url="@info.png" />
+                  <Image url="@../text-box_8259021.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="32.0" layoutX="179.0" layoutY="142.0">
+            <ImageView fitHeight="31.0" fitWidth="40.0" layoutX="169.0" layoutY="221.0">
                <image>
-                  <Image url="@add-text.png" />
+                  <Image url="@../file_5840241.png" />
                </image>
             </ImageView>
          </children>
