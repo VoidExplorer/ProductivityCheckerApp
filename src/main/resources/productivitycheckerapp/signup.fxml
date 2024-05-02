@@ -15,63 +15,55 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupController">
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SigninController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <AnchorPane prefHeight="408.0" prefWidth="326.0" style="-fx-background-color: #594BE8;">
          <children>
-            <AnchorPane maxHeight="1.7976931348623157E308" prefHeight="401.0" prefWidth="309.0" style="-fx-background-color: #594BE8;">
-               <children>
-                  <Text fill="#fffefe" layoutX="17.0" layoutY="74.0" opacity="0.69" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Productivity Checker" textAlignment="CENTER" wrappingWidth="241.478515625">
-                     <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
-                     </effect>
-                     <font>
-                        <Font name="SansSerif Bold" size="20.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#594be8" layoutX="111.0" layoutY="242.0" text="Note" textAlignment="CENTER" wrappingWidth="53.5">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="57.0" layoutY="272.0" size="120" textAlignment="CENTER" wrappingWidth="140.7942657470703">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </FontAwesomeIconView>
-               </children>
-            </AnchorPane>
+            <Text fill="#fffefe" layoutX="34.0" layoutY="75.0" opacity="0.69" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Productivity Checker" textAlignment="CENTER" wrappingWidth="241.478515625">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Text>
+            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="76.0" layoutY="237.0" size="120" textAlignment="CENTER" wrappingWidth="140.7942657470703">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </FontAwesomeIconView>
          </children>
-      </VBox>
-      <VBox prefHeight="401.0" prefWidth="402.0">
+      </AnchorPane>
+      <VBox prefHeight="391.0" prefWidth="393.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="467.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="380.0">
                <children>
-                  <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="314.0" layoutY="120.0" size="17" wrappingWidth="10.5" />
-                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="312.0" layoutY="185.0" size="15" text="" />
-                  <JFXButton layoutX="370.0" layoutY="298.0" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="SignUp" textFill="WHITE" />
-                  <Text fill="#594be8" layoutX="341.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SignUp Page">
+                  <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="80.0" layoutY="111.0" size="17" wrappingWidth="14.48906278426557" />
+                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="80.0" layoutY="181.0" size="15" />
+                  <JFXButton layoutX="157.0" layoutY="306.0" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="Sign Up" textFill="WHITE" />
+                  <Hyperlink fx:id="swsu" layoutX="232.0" layoutY="367.0" onAction="#switchToSignIn" text="Sign in" />
+                  <Text layoutX="69.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Have an Account?" />
+                  <Text fill="#594be8" layoutX="134.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up Page">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="356.0" layoutY="159.0" opacity="0.6" prefHeight="42.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-                  <MFXTextField floatMode="BORDER" floatingText="Username" layoutX="356.0" layoutY="94.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-                  <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="ReEnter-YourPassword" graphicTextGap="5.0" layoutX="353.0" layoutY="224.0" opacity="0.6" prefHeight="42.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="312.0" layoutY="250.0" size="15" />
-                  <Text layoutX="312.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Have an Account?" />
-                  <Hyperlink layoutX="454.0" layoutY="352.0" onAction="#switchToSignIn" text="Sign in" />
+                  <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="107.0" layoutY="155.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+                  <MFXTextField floatMode="BORDER" floatingText="  Username" layoutX="107.0" layoutY="84.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" AnchorPane.bottomAnchor="282.0">
+                     <padding>
+                        <Insets right="1.0" top="1.0" />
+                     </padding>
+                  </MFXTextField>
+                  <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Re-EnterPassword" layoutX="107.0" layoutY="228.0" opacity="0.6" prefHeight="42.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="80.0" layoutY="254.0" size="15" />
                </children>
-               <VBox.margin>
-                  <Insets left="-200.0" />
-               </VBox.margin>
             </AnchorPane>
          </children>
       </VBox>
