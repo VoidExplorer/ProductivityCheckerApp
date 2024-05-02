@@ -65,7 +65,7 @@ public class SignupController implements Initializable {
                 database.addUser(username, password);
             }
             else
-                System.out.println("Passwords do not match");
+                System.out.println("Password Don't Match");
         }
     }
 
