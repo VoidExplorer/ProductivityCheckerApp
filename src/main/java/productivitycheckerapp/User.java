@@ -44,7 +44,10 @@ public class User {
     public boolean validateLogin(User user,ArrayList<User> users ){
         int size = todos.size();
         for(int i =0; i<size; i++){
-            if(user.username == database.users.get(i).getUsername()){
+            if(Objects.equals(user.username, database.users.get(i).getUsername())){
+                return true;
+            }
+            if(Objects.equals(user.password, database.users.get(i).getPassword())){
                 return true;
             }
 
@@ -52,12 +55,9 @@ public class User {
         }
         return false;
 
-        for(int i =0; i<size; i++){
-            if(user.password == database.users.get(i).getPassword()){
-                return true;
-            }
-        }
-        return false;
+
+
+
 
 
     }
