@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import productivitycheckerapp.MFXResourcesLoader;
 import productivitycheckerapp.database;
 
 import java.io.IOException;
@@ -24,12 +25,14 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class SceneController implements Initializable {
+public class SceneController {
     private Stage stage;
     private Scene scene;
 
+    @FXML
     public void switchToSignUp(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signup.fxml")));
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
+        Parent root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -90,20 +93,9 @@ public class SceneController implements Initializable {
     private VBox drawerPaneTest;
     private static boolean visible;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        drawerBack.setVisible(visible);
-        HamburgerBasicCloseTransition hbct = new HamburgerBasicCloseTransition(menu);
-        hbct.setRate(-1);
-        menu.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
-            visible = !visible;
-            boolean vi = true;
-            hbct.setRate(hbct.getRate()*-1);
-            hbct.play();
-            drawerBack.setVisible(visible);
-        });
+
 
     }
 
 
-}
+

@@ -37,7 +37,7 @@ public class Main extends Application {
                 .build()
                 .setGlobal();
 
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signin.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
@@ -50,9 +50,9 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
         database.connect();
         database.readDb();
-        System.out.println("Username: " + database.users.get(1).getUsername());
-        System.out.println("TodoTitle: " + database.users.get(1).getTodos().get(0).getTitle());
-        System.out.println("TodoDescription: "+ database.users.get(1).getTodos().get(0).getDescription());
+        System.out.println("Username: " + database.users.get(0).getUsername());
+        System.out.println("TodoTitle: " + database.users.get(0).getTodos().get(0).getTitle());
+        System.out.println("TodoDescription: "+ database.users.get(0).getTodos().get(0).getDescription());
         launch();
     }
 
