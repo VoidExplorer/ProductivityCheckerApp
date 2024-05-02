@@ -19,7 +19,7 @@
    <children>
       <AnchorPane prefHeight="408.0" prefWidth="326.0" style="-fx-background-color: #594BE8;">
          <children>
-            <Text fill="#fffefe" layoutX="34.0" layoutY="75.0" opacity="0.69" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Productivity Checker" textAlignment="CENTER" wrappingWidth="241.478515625">
+            <Text fill="#fffefe" layoutX="34.0" layoutY="75.0" opacity="0.7" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Productivity Checker" textAlignment="CENTER" wrappingWidth="241.478515625">
                <effect>
                   <Lighting>
                      <bumpInput>
@@ -34,11 +34,16 @@
                   <Font name="SansSerif Bold" size="20.0" />
                </font>
             </Text>
-            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="84.0" layoutY="228.0" size="120" textAlignment="CENTER" wrappingWidth="140.7942657470703">
+            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="84.0" layoutY="238.0" opacity="0.78" size="120" text="" textAlignment="CENTER" wrappingWidth="140.7942657470703">
                <font>
                   <Font size="12.0" />
                </font>
             </FontAwesomeIconView>
+            <Text fill="WHITE" layoutX="117.0" layoutY="324.0" opacity="0.64" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" wrappingWidth="74.5">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
       <VBox prefHeight="391.0" prefWidth="393.0">
@@ -47,9 +52,9 @@
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="65.0" layoutY="163.0" size="17" wrappingWidth="14.48906278426557" />
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="65.0" layoutY="235.0" size="15" />
-                  <JFXButton layoutX="163.0" layoutY="274.0" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="Login" textFill="WHITE" />
-                  <Hyperlink fx:id="swsu" layoutX="211.0" layoutY="358.0" onAction="#switchToSignUp" text="Sign up" />
-                  <Text layoutX="76.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an Account?" />
+                  <JFXButton layoutX="158.0" layoutY="281.0" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="Login" textFill="WHITE" />
+                  <Hyperlink fx:id="swsu" layoutX="221.0" layoutY="358.0" onAction="#switchToSignUp" text="Sign up" />
+                  <Text layoutX="80.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an Account?" />
                   <FontAwesomeIconView fill="#594be8" glyphName="USERS" layoutX="168.0" layoutY="45.0" size="35" />
                   <Text fill="#594be8" layoutX="140.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page">
                      <font>

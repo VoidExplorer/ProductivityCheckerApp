@@ -34,11 +34,16 @@
                   <Font name="SansSerif Bold" size="20.0" />
                </font>
             </Text>
-            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="76.0" layoutY="237.0" size="120" textAlignment="CENTER" wrappingWidth="140.7942657470703">
+            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="76.0" layoutY="238.0" opacity="0.78" size="120" textAlignment="CENTER" wrappingWidth="140.7942657470703">
                <font>
                   <Font size="12.0" />
                </font>
             </FontAwesomeIconView>
+            <Text fill="WHITE" layoutX="109.0" layoutY="329.0" opacity="0.64" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" wrappingWidth="74.5">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
       <VBox prefHeight="391.0" prefWidth="393.0">
