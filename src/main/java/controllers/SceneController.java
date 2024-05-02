@@ -26,76 +26,9 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class SceneController {
-    private Stage stage;
-    private Scene scene;
-
-    @FXML
-    public void switchToSignUp(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
-        Parent root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
 
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private void signup() throws SQLException {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        database.addUser(username, password);
-    }
-
-    public void switchToSettings(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("settings.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void reportabug(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("reportabug.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void addTask(ActionEvent event) throws IOException {
-        Stage popup = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("settings.fxml")));
-        Scene scene1 = new Scene(root);
-        popup.setTitle("Add Note");
-        popup.setScene(scene1);
-        popup.show();
-    }
-
-    @FXML
-    private JFXHamburger menu;
-    @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
-    private JFXDrawer drawer;
-
-    @FXML
-    private VBox drawerPane;
-
-    @FXML
-    private AnchorPane drawerBack;
-    @FXML
-    private VBox drawerPaneTest;
-    private static boolean visible;
-
-
-
-    }
+}
 
 
 
