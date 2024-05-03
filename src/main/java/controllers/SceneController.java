@@ -3,6 +3,7 @@ package controllers;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBasicCloseTransition;
+import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,19 +32,7 @@ import java.util.ResourceBundle;
    and uses "label" to change the color of the label to red if that's true, reverts to purple otherwise
  */
 public class SceneController {
-    public static void setTextFieldLimit(MFXTextField field, Label label, int limit) {
-        field.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (observable.getValue().length() > limit) {
-                label.setVisible(true);
-                field.setStyle("-fx-border-color: red");
-            } else {
-                label.setVisible(false);
-                field.setStyle("-fx-border-color: #594BE8");
-            }
-        });
-    }
-
-    public static void setPasswordFieldLimit(MFXTextField field, Label label, int limit) {
+    public static void setFieldLimit(MFXTextField field, Label label, int limit) {
         field.textProperty().addListener((observable, oldValue, newValue) -> {
             if (observable.getValue().length() > limit) {
                 label.setVisible(true);

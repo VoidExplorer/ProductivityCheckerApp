@@ -72,7 +72,7 @@ public class SignupController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Initializing");
-        SceneController.setTextFieldLimit(usernameField, usernameLimitLabel, 15);
-        SceneController.setPasswordFieldLimit(passwordField, passwordLimitLabel, 15);
+        SceneController.setFieldLimit(usernameField, usernameLimitLabel, 15);
+        SceneController.setFieldLimit(passwordField, passwordLimitLabel, 15);
     }
 }
