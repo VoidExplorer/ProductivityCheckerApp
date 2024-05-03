@@ -6,6 +6,7 @@
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
@@ -62,11 +63,12 @@
                      </font>
                   </Text>
                   <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="105.0" layoutY="210.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-                  <MFXTextField floatMode="BORDER" floatingText="  Username" layoutX="104.0" layoutY="137.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" AnchorPane.bottomAnchor="230.0">
+                  <MFXTextField fx:id="usernamelimit1" floatMode="BORDER" floatingText="  Username" layoutX="104.0" layoutY="137.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20" AnchorPane.bottomAnchor="230.0">
                      <padding>
                         <Insets right="1.0" top="1.0" />
                      </padding>
                   </MFXTextField>
+                  <Label fx:id="usernamelabel" layoutX="113.0" layoutY="178.0" opacity="0.7" text="Limit Has Been Reached" textFill="#e40505" visible="false" />
                </children>
             </AnchorPane>
          </children>
