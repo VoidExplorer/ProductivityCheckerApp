@@ -12,8 +12,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
 import productivitycheckerapp.database;
@@ -41,6 +39,9 @@ public class SignupController implements Initializable {
     private Label usernameLimitLabel;
     @FXML
     private Label passwordLimitLabel;
+    @FXML
+    private Label passwordMatchLabel;
+
 
     @FXML
     public void switchToSignIn(ActionEvent event) throws IOException, SQLException {
@@ -74,5 +75,6 @@ public class SignupController implements Initializable {
         System.out.println("Initializing");
         SceneController.setFieldLimit(usernameField, usernameLimitLabel, 15);
         SceneController.setFieldLimit(passwordField, passwordLimitLabel, 15);
+        SceneController.addMatchChecker(passwordField, confirmpasswordField, passwordMatchLabel);
     }
 }
