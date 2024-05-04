@@ -30,6 +30,8 @@ public class SigninController implements Initializable {
     @FXML
     private MFXPasswordField passwordField;
     @FXML
+    private Label notvalid;
+    @FXML
     public void switchToSignUp(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
         Parent root = loader.load();
@@ -65,11 +67,13 @@ public class SigninController implements Initializable {
             System.out.println("Valid ya a5oya");
         }else{
             System.out.println("Wrong Username or Password");
+            notvalid.setVisible(true);
         }
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         SceneController.setFieldLimit(usernamelimit1, usernamelabel, 15);
+
 
     }
 }

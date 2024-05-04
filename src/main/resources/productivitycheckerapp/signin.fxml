@@ -69,6 +69,7 @@
                      </padding>
                   </MFXTextField>
                   <Label fx:id="usernamelabel" layoutX="113.0" layoutY="178.0" opacity="0.7" text="Limit Has Been Reached" textFill="#e40505" visible="false" />
+                  <Label fx:id="notvalid" layoutX="104.0" layoutY="101.0" opacity="0.6" text="Wrong Username or Password" textFill="RED" visible="false" />
                </children>
             </AnchorPane>
          </children>
