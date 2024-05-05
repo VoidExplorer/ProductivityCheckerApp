@@ -38,7 +38,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="600.0" spacing="20.0">
                <children>
-                  <MFXButton depthLevel="LEVEL0" style="-fx-background-color: #594BE8; -fx-border-radius: 3; -fx-text-fill: white;" textFill="WHITE" />
+                  <MFXButton depthLevel="LEVEL0" style="-fx-background-color: #594BE8; -fx-border-radius: 3; -fx-text-fill: white;" text="Todos" textFill="WHITE" />
                   <MFXButton style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3;" text="New" />
                </children>
                <padding>
