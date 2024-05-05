@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -10,17 +10,26 @@
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
    <children>
-      <AnchorPane prefHeight="408.0" prefWidth="326.0" style="-fx-background-color: #594BE8;">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0" style="-fx-background-color: #594BE8;">
          <children>
-            <Text fill="#fffefe" layoutX="34.0" layoutY="75.0" opacity="0.69" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Productivity Checker" textAlignment="CENTER" wrappingWidth="241.478515625">
+            <Text fill="#fffefe" opacity="0.7" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Productivity Checker" textAlignment="CENTER" wrappingWidth="241.478515625">
                <effect>
                   <Lighting>
                      <bumpInput>
@@ -35,46 +44,64 @@
                   <Font name="SansSerif Bold" size="20.0" />
                </font>
             </Text>
-            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="84.0" layoutY="239.0" opacity="0.78" size="120" textAlignment="CENTER" wrappingWidth="140.7942657470703">
+            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" opacity="0.78" size="120" text="" textAlignment="CENTER" wrappingWidth="140.7942657470703">
                <font>
                   <Font size="12.0" />
                </font>
             </FontAwesomeIconView>
-            <Text fill="WHITE" layoutX="117.0" layoutY="324.0" opacity="0.64" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" wrappingWidth="74.5">
+            <Text fill="WHITE" opacity="0.64" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" wrappingWidth="74.5">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
          </children>
-      </AnchorPane>
-      <VBox prefHeight="391.0" prefWidth="393.0">
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="380.0">
+            <Text fill="#594be8" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="300.0" spacing="10.0">
                <children>
-                  <FontAwesomeIconView fill="#594be8" glyphName="USER" layoutX="80.0" layoutY="119.0" size="17" wrappingWidth="14.48906278426557" />
-                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="80.0" layoutY="188.0" size="15" />
-                  <JFXButton layoutX="160.0" layoutY="300.0" onAction="#register" style="-fx-background-color: #594BE8; -fx-background-radius: 15px;" text="Sign Up" textFill="WHITE" />
-                  <Hyperlink fx:id="swsu" layoutX="223.0" layoutY="367.0" onAction="#switchToSignIn" text="Sign in" />
-                  <Text layoutX="69.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Have an Account?" />
-                  <Text fill="#594be8" layoutX="134.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up Page">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <MFXPasswordField fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" layoutX="107.0" layoutY="162.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20" />
-                  <MFXTextField fx:id="usernameField" floatMode="BORDER" floatingText="  Username" layoutX="107.0" layoutY="92.0" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20" AnchorPane.bottomAnchor="274.0">
+                  <FontAwesomeIconView fill="#594be8" glyphName="USER" size="17" wrappingWidth="14.48906278426557" />
+                  <MFXTextField fx:id="usernameField" floatMode="BORDER" floatingText="  Username" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20">
                      <padding>
                         <Insets right="1.0" top="1.0" />
                      </padding>
                   </MFXTextField>
-                  <MFXPasswordField fx:id="confirmpasswordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Re-EnterPassword" layoutX="107.0" layoutY="241.0" opacity="0.6" prefHeight="42.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" layoutX="80.0" layoutY="267.0" size="15" />
-                  <Label fx:id="usernameLimitLabel" layoutX="113.0" layoutY="134.0" opacity="0.7" prefHeight="18.0" prefWidth="167.0" text="Limit Has Been Reached" textFill="#ff0900" visible="false" />
-                  <Label fx:id="passwordLimitLabel" layoutX="113.0" layoutY="204.0" opacity="0.7" prefHeight="18.0" prefWidth="155.0" text="Limit Has Been Reached" textFill="RED" visible="false" />
-                  <Label fx:id="passwordMatchLabel" layoutX="120.0" layoutY="283.0" opacity="0.7" prefHeight="18.0" prefWidth="141.0" text="Passwords don't match" textFill="#ff0900" visible="false" />
                </children>
-            </AnchorPane>
+            </HBox>
+            <Label fx:id="usernameLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="167.0" text="Limit Has Been Reached" textFill="#ff0900" visible="false" />
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
+                  <MFXPasswordField fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20" />
+               </children>
+            </HBox>
+            <Label fx:id="passwordLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="155.0" text="Limit Has Been Reached" textFill="RED" visible="false" />
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
+                  <MFXPasswordField fx:id="confirmpasswordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Re-EnterPassword" opacity="0.6" prefHeight="42.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+               </children>
+            </HBox>
+            <Label fx:id="passwordMatchLabel" opacity="0.7" prefHeight="18.0" prefWidth="141.0" text="Passwords don't match" textFill="#ff0900" visible="false" />
+            <MFXButton onAction="#register" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-background-radius: 5px;" text="Register" />
+            <HBox alignment="CENTER" prefHeight="102.0" prefWidth="300.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Already Have an Account?" />
+                  <Hyperlink fx:id="swsu" onAction="#switchToSignIn" text="Sign in" />
+               </children>
+            </HBox>
          </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
       </VBox>
    </children>
-</HBox>
+</GridPane>
