@@ -63,7 +63,7 @@
                   <Font size="20.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="50.0" />
+                  <Insets bottom="50.0" left="10.0" />
                </VBox.margin>
             </Text>
             <HBox alignment="CENTER" prefHeight="46.0" prefWidth="300.0" spacing="10.0">
@@ -76,14 +76,20 @@
                   </MFXTextField>
                </children>
             </HBox>
-            <Label fx:id="usernameLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="167.0" text="Limit Has Been Reached" textFill="#ff0900" visible="false" />
+            <Label fx:id="usernameLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="151.0" text="Limit Has Been Reached" textFill="#ff0900" visible="false">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin></Label>
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
                   <MFXPasswordField fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20" />
                </children>
             </HBox>
-            <Label fx:id="passwordLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="155.0" text="Limit Has Been Reached" textFill="RED" visible="false" />
+            <Label fx:id="passwordLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="151.0" text="Limit Has Been Reached" textFill="RED" visible="false">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin></Label>
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
@@ -91,7 +97,10 @@
                </children>
             </HBox>
             <Label fx:id="passwordMatchLabel" opacity="0.7" prefHeight="18.0" prefWidth="141.0" text="Passwords don't match" textFill="#ff0900" visible="false" />
-            <MFXButton onAction="#register" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-background-radius: 5px;" text="Register" />
+            <MFXButton onAction="#register" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-background-radius: 5px;" text="Register">
+               <VBox.margin>
+                  <Insets left="7.0" />
+               </VBox.margin></MFXButton>
             <HBox alignment="CENTER" prefHeight="102.0" prefWidth="300.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Already Have an Account?" />
