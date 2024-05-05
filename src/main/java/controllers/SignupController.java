@@ -1,7 +1,6 @@
 package controllers;
 
 
-import com.jfoenix.controls.JFXButton;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
@@ -35,8 +34,6 @@ public class SignupController implements Initializable {
     @FXML
     private MFXPasswordField confirmpasswordField;
     @FXML
-    private JFXButton signup;
-    @FXML
     private Label usernameLimitLabel;
     @FXML
     private Label passwordLimitLabel;
@@ -45,7 +42,7 @@ public class SignupController implements Initializable {
 
 
     @FXML
-    public void switchToSignIn(ActionEvent event) throws IOException, SQLException {
+    public void switchToSignIn(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signin.fxml"));
         Parent root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

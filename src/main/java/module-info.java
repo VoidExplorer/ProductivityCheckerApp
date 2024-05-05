@@ -4,7 +4,6 @@ module productivitychecckerapp {
     requires javafx.media;
     requires java.sql;
     requires de.jensd.fx.glyphs.commons;
-    requires de.jensd.fx.glyphs.materialdesignicons;
     requires de.jensd.fx.glyphs.fontawesome;
     requires MaterialFX;
     requires fr.brouillard.oss.cssfx;
