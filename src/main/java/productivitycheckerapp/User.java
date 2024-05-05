@@ -61,6 +61,21 @@ public class User {
 
 
     }
+    public boolean validateRegister(User user,ArrayList<User> users) {
+        int size = todos.size();
+        for(int i=0; i<size; i++){
+            if(this.username==database.users.get(i).getUsername()){
+                System.out.println("Username already  exists");
+                return false;
+            }
+            if(this.password.length()<8){
+                System.out.println("Password is too short");
+                return false;
+            }
+
+        }
+       return true;
+    }
 
 
 
