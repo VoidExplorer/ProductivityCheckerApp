@@ -19,10 +19,11 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import static controllers.SceneController.scene;
+
 
 public class SigninController implements Initializable {
     private Stage stage;
-    private Scene scene;
     @FXML
     private MFXTextField usernamelimit1;
     @FXML
@@ -36,7 +37,7 @@ public class SigninController implements Initializable {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
         Parent root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        scene = new Scene(root, scene.getWidth(), scene.getHeight());
         stage.setScene(scene);
         stage.show();
     }

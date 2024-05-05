@@ -21,10 +21,11 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static controllers.SceneController.scene;
+
 
 public class SignupController implements Initializable {
     private Stage stage;
-    private Scene scene;
 
 
     @FXML
@@ -45,8 +46,8 @@ public class SignupController implements Initializable {
     public void switchToSignIn(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signin.fxml"));
         Parent root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, scene.getWidth(), scene.getHeight());
         stage.setScene(scene);
         stage.show();
     }

@@ -1,5 +1,6 @@
 package productivitycheckerapp;
 
+import controllers.SceneController;
 import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.theming.JavaFXThemes;
 import io.github.palexdev.materialfx.theming.MaterialFXStylesheets;
@@ -22,6 +23,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
+
+import static controllers.SceneController.scene;
+
 public class Main extends Application {
 
 
@@ -39,7 +43,7 @@ public class Main extends Application {
 
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signin.fxml"));
         Parent root = loader.load();
-        Scene scene = new Scene(root);
+        scene = new Scene(root, SceneController.getWidth(), SceneController.getHeight());
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.setTitle("Productivity Checker App");
