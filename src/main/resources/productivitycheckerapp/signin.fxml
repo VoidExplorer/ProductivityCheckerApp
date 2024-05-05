@@ -58,25 +58,37 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" GridPane.columnIndex="1">
          <children>
-            <FontAwesomeIconView fill="#594be8" glyphName="USERS" size="35" />
+            <FontAwesomeIconView fill="#594be8" glyphName="USERS" size="35">
+               <VBox.margin>
+                  <Insets left="7.0" />
+               </VBox.margin></FontAwesomeIconView>
             <Text fill="#594be8" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page">
                <font>
                   <Font size="20.0" />
                </font>
+               <VBox.margin>
+                  <Insets left="7.0" />
+               </VBox.margin>
             </Text>
             <HBox alignment="CENTER" prefHeight="46.0" prefWidth="300.0" spacing="10.0">
                <children>
-                  <FontAwesomeIconView fill="#594be8" glyphName="USER" size="17" wrappingWidth="14.48906278426557" />
+                  <FontAwesomeIconView fill="#594be8" glyphName="USER" size="17" wrappingWidth="14.48906278426557">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin></FontAwesomeIconView>
                   <MFXTextField fx:id="usernamelimit1" floatMode="BORDER" floatingText="  Username" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20">
-                     <padding>
-                        <Insets right="1.0" top="1.0" />
-                     </padding>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
                   </MFXTextField>
                </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
             </HBox>
             <Label fx:id="usernamelabel" opacity="0.7" text="Limit Has Been Reached" textFill="#e40505" visible="false">
                <VBox.margin>
-                  <Insets top="-10.0" />
+                  <Insets top="-15.0" />
                </VBox.margin>
             </Label>
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
@@ -84,8 +96,14 @@
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
                   <MFXPasswordField fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
-            <MFXButton onAction="#loginClick" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-background-radius: 5px;" text="Login" />
+            <MFXButton onAction="#loginClick" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-background-radius: 5px;" text="Login">
+               <VBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </VBox.margin></MFXButton>
             <HBox alignment="CENTER" prefHeight="102.0" prefWidth="300.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an Account?" />
