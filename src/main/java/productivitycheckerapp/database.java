@@ -15,7 +15,7 @@ public class database {
             e.getCause();
         }
     }
-    static ArrayList<User> users = new ArrayList<>();
+    public static ArrayList<User> users = new ArrayList<>();
 
     public static void readDb() throws SQLException {
         String SELECT_USER = "SELECT * from users";
