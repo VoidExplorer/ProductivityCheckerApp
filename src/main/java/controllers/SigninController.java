@@ -39,18 +39,16 @@ public class SigninController implements Initializable {
     public void switchToSignUp(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
         Parent root = loader.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, scene.getWidth(), scene.getHeight());
-        stage.setScene(scene);
+        Stage stage = (Stage) usernamelimit1.getScene().getWindow();
+        stage.setScene(new Scene(root));
         stage.show();
     }
     @FXML
     public void switchToHome() throws IOException {
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("Home.fxml"));
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("home.fxml"));
         Parent root = loader.load();
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        Stage stage = (Stage) usernamelimit1.getScene().getWindow();
+        stage.setScene(new Scene(root));
         stage.show();
     }
     public void loginClick() throws SQLException, IOException {

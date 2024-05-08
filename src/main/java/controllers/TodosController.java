@@ -19,6 +19,12 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static controllers.SceneController.scene;
-public class TodosController {
+public class TodosController implements Initializable {
+    public static void setTitle(String title) {
 
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

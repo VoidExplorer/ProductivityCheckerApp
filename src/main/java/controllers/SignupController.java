@@ -53,11 +53,10 @@ public class SignupController implements Initializable {
     }
     @FXML
     public void switchToTodoPage() throws IOException {
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("TodoPageScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("home.fxml"));
         Parent root = loader.load();
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        Stage stage = (Stage) usernameField.getScene().getWindow();
+        stage.setScene(new Scene(root));
         stage.show();
     }
  /*   public void signUp(ActionEvent event) throws SQLException {
