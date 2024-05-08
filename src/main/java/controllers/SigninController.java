@@ -39,9 +39,9 @@ public class SigninController implements Initializable {
     public void switchToSignUp(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
         Parent root = loader.load();
-        Stage stage = (Stage) usernamelimit1.getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, scene.getWidth(), scene.getHeight());
+        stage.setScene(scene);
     }
     @FXML
     public void switchToHome() throws IOException {

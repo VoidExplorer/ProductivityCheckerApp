@@ -49,7 +49,6 @@ public class SignupController implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, scene.getWidth(), scene.getHeight());
         stage.setScene(scene);
-        stage.show();
     }
     @FXML
     public void switchToTodoPage() throws IOException {
