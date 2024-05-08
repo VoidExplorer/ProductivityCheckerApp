@@ -47,6 +47,8 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.setTitle("Productivity Checker App");
+        stage.setMinWidth(600);
+        stage.setMinHeight(400);
         stage.show();
 
     }
