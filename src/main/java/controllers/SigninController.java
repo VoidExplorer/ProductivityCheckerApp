@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
+import productivitycheckerapp.User;
 import productivitycheckerapp.database;
 
 import java.io.IOException;
@@ -32,6 +33,8 @@ public class SigninController implements Initializable {
     private MFXPasswordField passwordField;
     @FXML
     private Label notvalid;
+
+    public static User loggedInUser;
     @FXML
     public void switchToSignUp(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
@@ -42,8 +45,8 @@ public class SigninController implements Initializable {
         stage.show();
     }
     @FXML
-    public void switchToTodoPage() throws IOException {
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("TodoPageScreen.fxml"));
+    public void switchToHome() throws IOException {
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("Home.fxml"));
         Parent root = loader.load();
         stage = new Stage();
         scene = new Scene(root);
@@ -60,11 +63,12 @@ public class SigninController implements Initializable {
         for (int i = 0; i < database.users.size(); i++) {
             if (Objects.equals(uname, database.users.get(i).getUsername()) && Objects.equals(pass, database.users.get(i).getPassword())) {
                 valid = true;
+                loggedInUser = database.users.get(i);
                 break;
             }
         }
         if (valid){
-            switchToTodoPage();
+            switchToHome();
             System.out.println("Valid ya a5oya");
         }else{
             System.out.println("Wrong Username or Password");

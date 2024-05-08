@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="hom" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EFF6EE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+   <top>
+      <GridPane prefHeight="52.0" prefWidth="600.0" BorderPane.alignment="CENTER_RIGHT">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.0" minWidth="10.0" prefWidth="379.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="221.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <MFXButton depthLevel="LEVEL0" style="-fx-background-color: #594BE8; -fx-border-radius: 3; -fx-text-fill: white;" text="Todos" textFill="WHITE" />
+                  <MFXButton style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3;" text="New" />
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <MFXTextField floatMode="BORDER" floatingText="Search" minHeight="-Infinity" opacity="0.7" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="70.0" />
+               </GridPane.margin>
+            </MFXTextField>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+            <VBox fx:id="todosbox">
+               <children>
+                  <MFXButton text="University">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </MFXButton>
+                  <MFXButton maxWidth="-Infinity" text="Java Course">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </MFXButton>
+                  <MFXButton text="Self Study">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </MFXButton>
+                  <MFXButton text="Gym">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </MFXButton>
+                  <MFXButton />
+                  <MFXButton />
+                  <MFXButton />
+                  <MFXButton />
+                  <MFXButton />
+                  <MFXButton />
+                  <MFXButton />
+                  <MFXButton />
+               </children>
+            </VBox>
+        </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <MFXButton onAction="#refreshTodos" text="Refresh" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+      </MFXButton>
+   </bottom>
+</BorderPane>
