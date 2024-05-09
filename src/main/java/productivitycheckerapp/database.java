@@ -15,6 +15,14 @@ public class database {
             e.getCause();
         }
     }
+
+    public static void disconnect() throws SQLException {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.getCause();
+        }
+    }
     public static ArrayList<User> users = new ArrayList<>();
 
     public static void readDb() throws SQLException {

@@ -54,7 +54,13 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        launch();
+        try {
+            launch();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            database.disconnect();
+        }
     }
 
 }
