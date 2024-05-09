@@ -3,6 +3,10 @@ package controllers;
 
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import io.github.palexdev.materialfx.validation.Constraint;
+import io.github.palexdev.materialfx.validation.Severity;
+import javafx.beans.binding.Bindings;
+import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,10 +22,12 @@ import productivitycheckerapp.database;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static controllers.SceneController.scene;
+import static io.github.palexdev.materialfx.utils.StringUtils.containsAny;
 
 
 public class SignupController implements Initializable {
@@ -41,6 +47,83 @@ public class SignupController implements Initializable {
     @FXML
     private Label passwordMatchLabel;
 
+    private static final PseudoClass INVALID = PseudoClass.getPseudoClass("invalid");
+    // define string patterns
+    private static final String[] upperChar = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split(" ");
+    private static final String[] lowerChar = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ");
+    private static final String[] digits = "0 1 2 3 4 5 6 7 8 9".split(" ");
+    private static final String[] specialCharacters = "! @ # & ( ) – [ { } ]: ; ' , ? / * ~ $ ^ + = < > -".split(" ");
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Constraint lengthConstraint = Constraint.Builder.build()
+                .setSeverity(Severity.ERROR)
+                .setMessage("Password must be at least 5 characters long")
+                .setCondition(passwordField.textProperty().length().greaterThanOrEqualTo(5))
+                .get();
+
+        Constraint specialCharConstraint = Constraint.Builder.build()
+                .setSeverity(Severity.ERROR)
+                .setMessage("Password must contain at least 1 special character")
+                .setCondition(Bindings.createBooleanBinding(
+                        () -> containsAny(passwordField.getText(), "", specialCharacters),
+                        passwordField.textProperty()
+                ))
+                .get();
+
+        Constraint digitConstraint = Constraint.Builder.build()
+                .setSeverity(Severity.ERROR)
+                .setMessage("Password must contain at least 1 digit")
+                .setCondition(Bindings.createBooleanBinding(
+                        () -> containsAny(passwordField.getText(), "", digits),
+                        passwordField.textProperty()
+                ))
+                .get();
+
+        Constraint lowerCharConstraint = Constraint.Builder.build()
+                .setSeverity(Severity.ERROR)
+                .setMessage("Password must at least contain 1 lowercase character")
+                .setCondition(Bindings.createBooleanBinding(
+                        () -> containsAny(passwordField.getText(), "", lowerChar),
+                        passwordField.textProperty()
+                ))
+                .get();
+
+        Constraint upperCharConstraint = Constraint.Builder.build()
+                .setSeverity(Severity.ERROR)
+                .setMessage("Password must at least contain 1 uppercase character")
+                .setCondition(Bindings.createBooleanBinding(
+                        () -> containsAny(passwordField.getText(), "", upperChar),
+                        passwordField.textProperty()
+                ))
+                .get();
+
+        passwordField.getValidator()
+                .constraint(lengthConstraint)
+                .constraint(specialCharConstraint)
+                .constraint(digitConstraint)
+                .constraint(lowerCharConstraint)
+                .constraint(upperCharConstraint);
+
+        passwordField.getValidator().validProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                passwordLimitLabel.setVisible(false);
+                passwordField.pseudoClassStateChanged(INVALID, false);
+            }
+        });
+
+        passwordField.delegateFocusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(oldValue && !newValue) {
+                List<Constraint> constraints = passwordField.validate();
+            if(!constraints.isEmpty()) {
+                passwordField.pseudoClassStateChanged(INVALID, true);
+                passwordLimitLabel.setText(constraints.getFirst().getMessage());
+                passwordLimitLabel.setVisible(true);
+            }
+            }
+        });
+    }
 
     @FXML
     public void switchToSignIn(ActionEvent event) throws IOException {
@@ -97,12 +180,5 @@ public class SignupController implements Initializable {
                 System.out.println("Passwords doesn't match");
             }
         }
-    }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Initializing");
-        SceneController.setFieldLimit(usernameField, usernameLimitLabel, 15);
-        SceneController.setFieldLimit(passwordField, passwordLimitLabel, 15);
-        SceneController.addMatchChecker(passwordField, confirmpasswordField, passwordMatchLabel);
     }
 }
