@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="652.0" stylesheets="@../css/signup.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -56,7 +56,7 @@
             </Text>
          </children>
       </VBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: white;" GridPane.columnIndex="1">
          <children>
             <Text fill="#594be8" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
                <font>
@@ -69,11 +69,7 @@
             <HBox alignment="CENTER" prefHeight="46.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="USER" size="17" wrappingWidth="14.48906278426557" />
-                  <MFXTextField fx:id="usernameField" floatMode="BORDER" floatingText="  Username" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="20">
-                     <padding>
-                        <Insets right="1.0" top="1.0" />
-                     </padding>
-                  </MFXTextField>
+                  <MFXTextField fx:id="usernameField" floatMode="BORDER" floatingText="Username" prefHeight="42.0" prefWidth="167.0" />
                </children>
             </HBox>
             <Label fx:id="usernameLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="151.0" text="Limit Has Been Reached" textFill="#ff0900" visible="false">
@@ -83,7 +79,7 @@
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
-                  <MFXPasswordField id="passwordField" fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" opacity="0.6" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px;" stylesheets="@../css/signup.css" textLimit="20" />
+                  <MFXPasswordField id="passwordField" fx:id="passwordField" floatMode="BORDER" floatingText="Password" prefHeight="42.0" prefWidth="167.0" />
                </children>
             </HBox>
             <Label fx:id="passwordLimitLabel" alignment="CENTER" opacity="0.7" prefHeight="18.0" prefWidth="328.0" textFill="RED" visible="false">
@@ -93,7 +89,7 @@
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
-                  <MFXPasswordField fx:id="confirmpasswordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Re-EnterPassword" opacity="0.6" prefHeight="42.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
+                  <MFXPasswordField fx:id="confirmpasswordField" floatMode="BORDER" floatingText="Confirm password" prefHeight="42.0" prefWidth="167.0" />
                </children>
             </HBox>
             <Label fx:id="passwordMatchLabel" opacity="0.7" prefHeight="18.0" prefWidth="141.0" text="Passwords don't match" textFill="#ff0900" visible="false" />

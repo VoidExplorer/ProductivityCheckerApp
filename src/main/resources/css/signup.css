@@ -1,11 +1,11 @@
-#passwordField {
-    -fx-border-color: #594BE8;
-}
-
 #passwordField:invalid {
     -fx-border-color: red;
 }
 
 #passwordField:invalid .floating-text{
     -fx-text-fill: red;
+}
+
+.mfx-text-field .floating-text {
+    -fx-background-color: white;
 }
