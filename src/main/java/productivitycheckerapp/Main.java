@@ -55,6 +55,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
         try {
+            database.connect();
             launch();
         } catch (Exception e) {
             System.out.println(e.getMessage());
