@@ -72,7 +72,7 @@
       </ScrollPane>
    </center>
    <bottom>
-      <MFXButton onAction="#refreshTodos" style="-fx-background-color: #4caf50; -fx-text-fill: white;" text="Edit Page" BorderPane.alignment="CENTER">
+      <MFXButton onAction="#refreshTodos" style="-fx-background-color: #4caf50; -fx-text-fill: white;" text="Refresh" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </BorderPane.margin>
