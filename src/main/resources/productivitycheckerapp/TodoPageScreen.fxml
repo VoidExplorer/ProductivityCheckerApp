@@ -40,7 +40,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="600.0" spacing="20.0">
                <children>
-                  <MFXButton style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3; -fx-background-radius: 5px;" text="New" />
+                  <MFXButton onAction="#newTodo" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3; -fx-background-radius: 5px;" text="New" />
                </children>
                <padding>
                   <Insets left="5.0" />
