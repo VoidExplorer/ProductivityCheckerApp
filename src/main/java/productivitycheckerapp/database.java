@@ -75,13 +75,14 @@ public class database {
 
     }
 
-    public static void addUser(String username, String password) throws SQLException {
-        String INSERT_USER = "INSERT INTO users(username, password) VALUES(?, ?)";
+    public static void addUser(String username, String password, boolean student) throws SQLException {
+        String INSERT_USER = "INSERT INTO users(username, password, Student) VALUES(?, ?, ?)";
         int nRows = 0;
         PreparedStatement ps = connection.prepareStatement(INSERT_USER);
         Statement statement = connection.createStatement();
         ps.setString(1, username);
         ps.setString(2, password);
+        ps.setBoolean(3, student);
         nRows = ps.executeUpdate();
     }
 

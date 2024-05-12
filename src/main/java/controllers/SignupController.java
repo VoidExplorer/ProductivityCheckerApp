@@ -3,6 +3,7 @@ package controllers;
 
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import io.github.palexdev.materialfx.validation.Constraint;
 import io.github.palexdev.materialfx.validation.Severity;
 import javafx.beans.binding.Bindings;
@@ -46,6 +47,9 @@ public class SignupController implements Initializable {
     private Label passwordLimitLabel;
     @FXML
     private Label passwordMatchLabel;
+    @FXML
+    private MFXToggleButton studentToggle;
+
 
     private static final PseudoClass INVALID = PseudoClass.getPseudoClass("invalid");
     // define string patterns
@@ -123,6 +127,16 @@ public class SignupController implements Initializable {
             }
             }
         });
+
+        studentToggle.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            if(observable.getValue()) {
+                studentToggle.setText("Student");
+            }
+            else {
+                studentToggle.setText("User");
+            }
+        });
+
     }
 
     @FXML
@@ -171,8 +185,8 @@ public class SignupController implements Initializable {
             }
         }
         if(!userExist && Objects.equals(pass, cpass)){
-          database.addUser(uname,pass);
-          switchToTodoPage();
+            database.addUser(uname,pass, studentToggle.selectedProperty().getValue());
+            switchToTodoPage();
         }else{
             if(userExist){
                 System.out.println("user already exist");

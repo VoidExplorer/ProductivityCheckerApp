@@ -4,6 +4,7 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.materialfx.controls.MFXToggleButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -93,6 +94,11 @@
                </children>
             </HBox>
             <Label fx:id="passwordMatchLabel" opacity="0.7" prefHeight="18.0" prefWidth="141.0" text="Passwords don't match" textFill="#ff0900" visible="false" />
+            <MFXToggleButton fx:id="studentToggle" text="User">
+               <VBox.margin>
+                  <Insets top="-15.0" />
+               </VBox.margin>
+            </MFXToggleButton>
             <MFXButton onAction="#register" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-background-radius: 5px;" text="Register">
                <VBox.margin>
                   <Insets left="7.0" />
