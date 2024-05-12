@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0" spacing="100.0">
+         <children>
+            <MFXTextField floatMode="BORDER" floatingText="Task" prefHeight="28.0" prefWidth="198.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="78.0">
+         <children>
+            <MFXDatePicker promptText="Due Time" />
+         </children>
+      </HBox>
+      <MFXButton style="-fx-background-color: #7a0ed9; -fx-text-fill: white;" text="Add Task" />
+   </children>
+</VBox>
