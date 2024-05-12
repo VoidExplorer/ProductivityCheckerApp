@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
 import productivitycheckerapp.Todo;
@@ -15,10 +16,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import static controllers.SceneController.scene;
+
 public class HomeController implements Initializable {
 
     @FXML
     private VBox todosbox;
+    private Stage stage;
 
     public void refreshTodos(ActionEvent e){
        todosbox.getChildren().clear();
@@ -33,6 +38,14 @@ public class HomeController implements Initializable {
         }
 
 
+    }
+    public void newTodo(ActionEvent e) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("NewTodo.fxml"));
+        Parent root = loader.load();
+        scene = new Scene(root);
+        stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
     private static MFXButton getButton(String todoTitle) {
