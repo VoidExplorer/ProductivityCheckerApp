@@ -45,7 +45,7 @@ public class SigninController implements Initializable {
     }
     @FXML
     public void switchToHome() throws IOException {
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("home.fxml"));
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("TodoPageScreen.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) usernamelimit1.getScene().getWindow();
         stage.setScene(new Scene(root));

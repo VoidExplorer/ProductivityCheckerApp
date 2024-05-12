@@ -41,7 +41,7 @@ public class HomeController implements Initializable {
             try {
                 FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("TodoPageScreen.fxml"));
                 Parent root = loader.load();
-                TodosController.setTitle(todoTitle);
+
                 Stage stage = (Stage) button.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
@@ -54,6 +54,7 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        ActionEvent onload = new ActionEvent();
+        refreshTodos(onload);
     }
 }
