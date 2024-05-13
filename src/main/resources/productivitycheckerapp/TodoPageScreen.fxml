@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
    <bottom>
       <HBox prefHeight="65.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
@@ -40,7 +40,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="600.0" spacing="20.0">
                <children>
-                  <MFXButton style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3; -fx-background-radius: 5px;" text="New" />
+                  <MFXButton onAction="#newTodo" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3; -fx-background-radius: 5px;" text="New" />
                </children>
                <padding>
                   <Insets left="5.0" />
@@ -70,7 +70,7 @@
             <Insets bottom="20.0" />
          </BorderPane.margin>
          <content>
-            <VBox prefHeight="263.0" prefWidth="100.0">
+            <VBox fx:id="todosbox" prefHeight="263.0" prefWidth="100.0">
                <children>
                   <MFXButton style="-fx-background-color: transparent; -fx-background-radius: 5px;">
                      <VBox.margin>

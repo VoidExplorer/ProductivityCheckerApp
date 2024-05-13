@@ -32,7 +32,7 @@ public class SigninController implements Initializable {
     @FXML
     private MFXPasswordField passwordField;
     @FXML
-    private Label notvalid;
+    private Label incorrectCredentialsLabel;
 
     public static User loggedInUser;
     @FXML
@@ -45,7 +45,7 @@ public class SigninController implements Initializable {
     }
     @FXML
     public void switchToHome() throws IOException {
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("home.fxml"));
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("TodoPageScreen.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) usernamelimit1.getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -70,13 +70,11 @@ public class SigninController implements Initializable {
             System.out.println("Valid ya a5oya");
         }else{
             System.out.println("Wrong Username or Password");
-            notvalid.setVisible(true);
+            incorrectCredentialsLabel.setVisible(true);
         }
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         SceneController.setFieldLimit(usernamelimit1, usernamelabel, 15);
-
-
     }
 }

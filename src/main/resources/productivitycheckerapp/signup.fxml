@@ -4,6 +4,7 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.materialfx.controls.MFXToggleButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -69,7 +70,7 @@
             <HBox alignment="CENTER" prefHeight="46.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="USER" size="17" wrappingWidth="14.48906278426557" />
-                  <MFXTextField fx:id="usernameField" floatMode="BORDER" floatingText="Username" prefHeight="42.0" prefWidth="167.0" />
+                  <MFXTextField fx:id="usernameField" floatMode="BORDER" floatingText="Username" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
                </children>
             </HBox>
             <Label fx:id="usernameLimitLabel" opacity="0.7" prefHeight="18.0" prefWidth="151.0" text="Limit Has Been Reached" textFill="#ff0900" visible="false">
@@ -79,7 +80,7 @@
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
-                  <MFXPasswordField id="passwordField" fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" prefHeight="42.0" prefWidth="167.0" />
+                  <MFXPasswordField id="passwordField" fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
                </children>
             </HBox>
             <Label fx:id="passwordLimitLabel" alignment="CENTER" opacity="0.7" prefHeight="18.0" prefWidth="328.0" textFill="RED" visible="false">
@@ -89,10 +90,15 @@
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
-                  <MFXPasswordField fx:id="confirmpasswordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Confirm password" prefHeight="42.0" prefWidth="167.0" />
+                  <MFXPasswordField fx:id="confirmpasswordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Confirm password" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
                </children>
             </HBox>
             <Label fx:id="passwordMatchLabel" opacity="0.7" prefHeight="18.0" prefWidth="141.0" text="Passwords don't match" textFill="#ff0900" visible="false" />
+            <MFXToggleButton fx:id="studentToggle" text="User">
+               <VBox.margin>
+                  <Insets top="-15.0" />
+               </VBox.margin>
+            </MFXToggleButton>
             <MFXButton onAction="#register" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-background-radius: 5px;" text="Register">
                <VBox.margin>
                   <Insets left="7.0" />
