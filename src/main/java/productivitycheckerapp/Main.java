@@ -28,7 +28,7 @@ import static controllers.SceneController.scene;
 
 public class Main extends Application {
 
-
+    public static User currentUser;
     @Override
     public void start(Stage stage) throws IOException {
         CSSFX.start();
@@ -44,7 +44,6 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signin.fxml"));
         Parent root = loader.load();
         scene = new Scene(root, SceneController.getWidth(), SceneController.getHeight());
-        scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.setTitle("Productivity Checker App");
         stage.setMinWidth(600);

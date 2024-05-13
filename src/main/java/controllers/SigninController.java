@@ -12,15 +12,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
+import productivitycheckerapp.Todo;
 import productivitycheckerapp.User;
 import productivitycheckerapp.database;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static controllers.SceneController.scene;
+import static productivitycheckerapp.Main.currentUser;
 
 
 public class SigninController implements Initializable {
@@ -66,6 +69,9 @@ public class SigninController implements Initializable {
             }
         }
         if (valid){
+            // temporary ArrayList for testing
+            ArrayList<Todo> t = new ArrayList<>();
+            currentUser = new User(uname, pass, t);
             switchToHome();
             System.out.println("Valid ya a5oya");
         }else{
