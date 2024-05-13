@@ -32,7 +32,7 @@ public class SigninController implements Initializable {
     @FXML
     private MFXPasswordField passwordField;
     @FXML
-    private Label notvalid;
+    private Label incorrectCredentialsLabel;
 
     public static User loggedInUser;
     @FXML
@@ -70,7 +70,7 @@ public class SigninController implements Initializable {
             System.out.println("Valid ya a5oya");
         }else{
             System.out.println("Wrong Username or Password");
-            notvalid.setVisible(true);
+            incorrectCredentialsLabel.setVisible(true);
         }
     }
     @Override
