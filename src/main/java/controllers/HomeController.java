@@ -21,6 +21,7 @@ import static controllers.SceneController.scene;
 
 public class HomeController implements Initializable {
 
+    public static Stage newTodoStage;
     static VBox todosbox_;
     @FXML
     private VBox todosbox;
@@ -48,6 +49,7 @@ public class HomeController implements Initializable {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
+        newTodoStage = stage;
     }
 
     private static MFXButton getButton(String todoTitle) {

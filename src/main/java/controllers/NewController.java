@@ -17,6 +17,7 @@ import java.sql.SQLException;
 
 import static productivitycheckerapp.Main.currentUser;
 import static controllers.HomeController.todosbox_;
+import static controllers.HomeController.newTodoStage;
 public class NewController {
     static String title;
 
@@ -34,7 +35,7 @@ public class NewController {
         stage.setScene(scene);
     }
 
-    public void addTodo() {
+    public void addTodo(ActionEvent event) {
         title = titleField.getText();
         String description = descriptionField.getText();
         if(title.isEmpty() || description.isEmpty()){
@@ -45,6 +46,7 @@ public class NewController {
                 database.addTodo(currentUser.getUsername(), title, description);
                 MFXButton button = new MFXButton(title);
                 todosbox_.getChildren().add(button);
+                newTodoStage.close();
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }
