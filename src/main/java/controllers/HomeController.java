@@ -57,7 +57,8 @@ public class HomeController implements Initializable {
                 Parent root = loader.load();
 
                 Stage stage = (Stage) button.getScene().getWindow();
-                stage.setScene(new Scene(root));
+                scene = new Scene(root, scene.getWidth(), scene.getHeight());
+                stage.setScene(scene);
                 stage.show();
             } catch (IOException ioException) {
                 ioException.printStackTrace();

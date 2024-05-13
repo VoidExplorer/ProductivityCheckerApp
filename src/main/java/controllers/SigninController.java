@@ -51,8 +51,8 @@ public class SigninController implements Initializable {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("TodoPageScreen.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) usernamelimit1.getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        scene = new Scene(root, scene.getWidth(), scene.getHeight());
+        stage.setScene(scene);
     }
     public void loginClick() throws SQLException, IOException {
         String uname = usernamelimit1.getText();
