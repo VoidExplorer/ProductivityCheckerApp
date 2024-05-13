@@ -100,6 +100,7 @@
                <VBox.margin>
                   <Insets left="10.0" top="20.0" />
                </VBox.margin></MFXButton>
+            <Label fx:id="incorrectCredentialsLabel" text="Incorrect username or password" textFill="RED" visible="false" />
             <HBox alignment="CENTER" prefHeight="102.0" prefWidth="300.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an Account?" />
