@@ -44,7 +44,8 @@ public class HomeController implements Initializable {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("NewTodo.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
-        stage = new Stage();
+        Stage stage = new Stage();
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
