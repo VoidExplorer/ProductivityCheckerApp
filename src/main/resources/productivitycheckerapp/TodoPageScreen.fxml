@@ -2,9 +2,11 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
 <?import io.github.palexdev.materialfx.controls.MFXCircleToggleNode?>
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.mfxcore.controls.Label?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -13,17 +15,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
    <bottom>
       <HBox prefHeight="65.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <MFXButton style="-fx-background-color: #2196f3; -fx-text-fill: white;" text="Edit Page">
+            <MFXButton onAction="#EditTodo" style="-fx-background-color: #2196f3; -fx-text-fill: white;" text="Edit Todo">
                <HBox.margin>
-                  <Insets />
+                  <Insets left="60.0" />
                </HBox.margin>
             </MFXButton>
-            <MFXButton style="-fx-text-fill: white; -fx-background-color: #F23939;" text="Delete Page" />
+            <MFXButton onAction="#deleteTodo" style="-fx-text-fill: white; -fx-background-color: #F23939;" text="Delete Todo" />
+            <MFXButton onAction="#switchToAddTask" style="-fx-background-color: #50C878;" text="Add Task" textFill="WHITE" />
          </children>
          <padding>
             <Insets left="50.0" />
@@ -95,4 +99,41 @@
          </content>
       </MFXScrollPane>
    </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="hbox1" prefHeight="40.0" prefWidth="500.0">
+               <children>
+                  <Label fx:id="TODOTITLE" text="TodoTitle">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="TODODESC" text="Todo good awesome amazing wonderful description">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="486.0">
+                     <children>
+                        <MFXCheckbox />
+                        <MFXCheckbox />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
