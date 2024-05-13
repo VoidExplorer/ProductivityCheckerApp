@@ -122,6 +122,7 @@ public class database {
         ps.setString(1, Title);
         ps.setString(2, Description);
         nRows = ps.executeUpdate();
+        //...
     }
 
 }
