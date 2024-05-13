@@ -76,7 +76,7 @@
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></FontAwesomeIconView>
-                  <MFXTextField fx:id="usernamelimit1" floatMode="BORDER" floatingText="Username" prefHeight="42.0" prefWidth="167.0" />
+                  <MFXTextField fx:id="usernamelimit1" floatMode="BORDER" floatingText="Username" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -90,7 +90,7 @@
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
-                  <MFXPasswordField id="passwordField" fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" prefHeight="42.0" prefWidth="167.0" />
+                  <MFXPasswordField id="passwordField" fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
                </children>
                <VBox.margin>
                   <Insets />
