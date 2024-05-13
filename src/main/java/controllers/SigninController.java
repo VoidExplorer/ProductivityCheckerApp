@@ -76,7 +76,5 @@ public class SigninController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         SceneController.setFieldLimit(usernamelimit1, usernamelabel, 15);
-
-
     }
 }
