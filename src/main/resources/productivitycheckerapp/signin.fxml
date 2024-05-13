@@ -56,7 +56,7 @@
             </Text>
          </children>
       </VBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" GridPane.columnIndex="1">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" style="-fx-background-color: white;" GridPane.columnIndex="1">
          <children>
             <FontAwesomeIconView fill="#594be8" glyphName="USERS" size="35">
                <VBox.margin>
