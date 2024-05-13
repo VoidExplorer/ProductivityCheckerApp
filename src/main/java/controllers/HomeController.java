@@ -21,6 +21,7 @@ import static controllers.SceneController.scene;
 
 public class HomeController implements Initializable {
 
+    static VBox todosbox_;
     @FXML
     private VBox todosbox;
     private Stage stage;
@@ -69,5 +70,6 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ActionEvent onload = new ActionEvent();
         refreshTodos(onload);
+        todosbox_ = todosbox;
     }
 }

@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditController">
    <bottom>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
          <padding>
             <Insets left="50.0" />
          </padding>
          <children>
-            <MFXButton style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-border-radius: 5px;" text="Add Todo">
+            <MFXButton onAction="#addTodo" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-border-radius: 5px;" text="Add Todo">
                <HBox.margin>
                   <Insets left="210.0" top="10.0" />
                </HBox.margin>
@@ -38,7 +38,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="600.0" spacing="20.0">
                <children>
-                  <MFXButton style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3; -fx-background-radius: 5px;" text="New" />
+                  <MFXButton onAction="#switchToNew" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3; -fx-background-radius: 5px;" text="New" />
                </children>
                <padding>
                   <Insets left="5.0" />
@@ -65,12 +65,12 @@
    <center>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="500.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <MFXTextField floatMode="BORDER" floatingText="Title" minHeight="-Infinity" opacity="0.7" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;">
+            <MFXTextField fx:id="titleField" floatMode="BORDER" floatingText="Title" minHeight="-Infinity" opacity="0.7" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;">
                <VBox.margin>
                   <Insets left="215.0" top="80.0" />
                </VBox.margin>
             </MFXTextField>
-            <MFXTextField floatMode="BORDER" floatingText="Description" minHeight="-Infinity" opacity="0.7" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;">
+            <MFXTextField fx:id="descriptionField" floatMode="BORDER" floatingText="Description" minHeight="-Infinity" opacity="0.7" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;">
                <VBox.margin>
                   <Insets left="215.0" />
                </VBox.margin>
