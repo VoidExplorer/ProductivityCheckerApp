@@ -7,6 +7,7 @@ module productivitychecckerapp {
     requires de.jensd.fx.glyphs.fontawesome;
     requires MaterialFX;
     requires fr.brouillard.oss.cssfx;
+    requires javafx.base;
 
     opens productivitycheckerapp to javafx.fxml;
     exports productivitycheckerapp;
