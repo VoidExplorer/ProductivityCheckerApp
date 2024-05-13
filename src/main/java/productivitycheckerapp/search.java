@@ -1,6 +1,10 @@
 package productivitycheckerapp;
 
-public interface search {
+import java.util.ArrayList;
+
+public interface search  {
+    String getTitle();
+
 
 }
 

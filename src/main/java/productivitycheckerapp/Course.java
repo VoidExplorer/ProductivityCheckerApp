@@ -1,6 +1,6 @@
 package productivitycheckerapp;
 
-public class Course {
+public class Course implements search {
     private String name;
     private Course teacher;
 
@@ -25,4 +25,8 @@ public class Course {
         return name;
     }
 
+    @Override
+    public String getTitle() {
+        return "";
+    }
 }

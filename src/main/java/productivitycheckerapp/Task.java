@@ -1,6 +1,11 @@
 package productivitycheckerapp;
 
-public class Task {
+public class Task implements search {
+    @Override
+    public String getTitle() {
+        return "";
+    }
+
     private String taskText, dueTime;
     private boolean isCompleted = false;
 

@@ -2,7 +2,7 @@ package productivitycheckerapp;
 
 import java.util.ArrayList;
 
-public class Todo {
+public class Todo implements search {
     private String title, description;
     private int id;
     ArrayList<Task> tasks = new ArrayList<>();
