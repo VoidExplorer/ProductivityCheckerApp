@@ -95,15 +95,14 @@ public class database {
         nRows = ps.executeUpdate();
     }
 
-    public static void addTodo(String username, String TodoID, String Title, String Description) throws SQLException {
-        String INSERT_USER = "INSERT INTO users(username, TodoID, Title, Description) VALUES(?, ?, ?, ?)";
+    public static void addTodo(String username, String Title, String Description) throws SQLException {
+        String INSERT_USER = "INSERT INTO todos(username, Title, Description) VALUES(?, ?, ?)";
         int nRows = 0;
         PreparedStatement ps = connection.prepareStatement(INSERT_USER);
         Statement statement = connection.createStatement();
         ps.setString(1, username);
-        ps.setString(2, TodoID);
-        ps.setString(3, Title);
-        ps.setString(4, Description);
+        ps.setString(2, Title);
+        ps.setString(3, Description);
         nRows = ps.executeUpdate();
     }
     public static void deleteTodo(String TodoID) throws SQLException {
