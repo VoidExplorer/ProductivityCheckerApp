@@ -137,6 +137,17 @@ public class SignupController implements Initializable {
             }
         });
 
+
+        confirmpasswordField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(observable.getValue().equals(passwordField.getText()) || observable.getValue().isEmpty()) {
+                passwordMatchLabel.setVisible(false);
+                confirmpasswordField.setStyle("-fx-border-color: #594BE8");
+            }
+            else {
+                passwordMatchLabel.setVisible(true);
+                confirmpasswordField.setStyle("-fx-border-color: red");
+            }
+        });
     }
 
     @FXML
