@@ -67,7 +67,15 @@ public class HomeController implements Initializable {
         });
         return button;
     }
+    public void EditTodo(ActionEvent e){
 
+    }
+    public void deleteTodo(ActionEvent e){
+
+    }
+    public void switchToAddTask(){
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ActionEvent onload = new ActionEvent();
