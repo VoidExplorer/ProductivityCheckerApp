@@ -36,7 +36,9 @@ public class HomeController implements Initializable {
     @FXML
     private static HBox hbox1;
     @FXML
-    private static VBox cboxes;
+    private VBox cboxes;
+    @FXML
+    private HBox footerbox;
 
     ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
     public void refreshTodos(ActionEvent e){
@@ -75,6 +77,7 @@ public class HomeController implements Initializable {
                 MFXCheckbox mfxcb = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
                 mfxcb.setSelected(task.isCompleted());
             }
+
         });
         return button;
     }
