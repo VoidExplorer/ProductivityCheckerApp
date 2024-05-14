@@ -20,6 +20,7 @@ import java.util.ResourceBundle;
 import static controllers.SceneController.scene;
 
 public class HomeController implements Initializable {
+    public static Stage newTodoStage;
 
     static VBox todosbox_;
     @FXML
@@ -44,10 +45,10 @@ public class HomeController implements Initializable {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("NewTodo.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+        newTodoStage = new Stage();
+        newTodoStage.setResizable(false);
+        newTodoStage.setScene(scene);
+        newTodoStage.show();
     }
 
     private static MFXButton getButton(String todoTitle) {
