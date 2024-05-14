@@ -1,16 +1,19 @@
 package controllers;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
+import productivitycheckerapp.Task;
 import productivitycheckerapp.Todo;
 import java.io.IOException;
 import java.net.URL;
@@ -26,15 +29,24 @@ public class HomeController implements Initializable {
     @FXML
     private VBox todosbox;
     private Stage stage;
+    @FXML
+    private Label TODOTITLE;
+    @FXML
+    private Label TODODESC;
+    @FXML
+    private static HBox hbox1;
+    @FXML
+    private static VBox cboxes;
 
+    ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
     public void refreshTodos(ActionEvent e){
        todosbox.getChildren().clear();
-       ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
-        for (Todo hometodo : todos) {
+
+        for (int i = 0; i < todos.size(); i++) {
             HBox hbox = new HBox();
             hbox.setStyle("-fx-start-margin: 20px; -fx-end-margin: 20px");
-            String todoTitle = hometodo.getTitle();
-            MFXButton button = getButton(todoTitle);
+            String todoTitle = todos.get(i).getTitle();
+            MFXButton button = getButton(todoTitle,i);
             hbox.getChildren().add(button);
             todosbox.getChildren().add(hbox);
         }
@@ -51,10 +63,18 @@ public class HomeController implements Initializable {
         newTodoStage.show();
     }
 
-    private static MFXButton getButton(String todoTitle) {
+    private  MFXButton getButton(String todoTitle, int indx) {
         MFXButton button = new MFXButton(todoTitle);
         button.setOnMouseClicked(mouseEvent -> {
-
+            TODOTITLE.setText(todoTitle);
+            Todo todo = todos.get(indx);
+            TODODESC.setText(todo.getDescription());
+            cboxes.getChildren().clear();
+            for (int i = 0; i < todo.getTasks().size(); i++) {
+                Task task = todo.getTasks().get(i);
+                MFXCheckbox mfxcb = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
+                mfxcb.setSelected(task.isCompleted());
+            }
         });
         return button;
     }
