@@ -54,22 +54,18 @@ public class HomeController implements Initializable {
     private static MFXButton getButton(String todoTitle) {
         MFXButton button = new MFXButton(todoTitle);
         button.setOnMouseClicked(mouseEvent -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("TodoPageScreen.fxml"));
-                Parent root = loader.load();
 
-                Stage stage = (Stage) button.getScene().getWindow();
-                scene = new Scene(root, scene.getWidth(), scene.getHeight());
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
         });
         return button;
     }
-    public void EditTodo(ActionEvent e){
-
+    public void EditTodo(ActionEvent e) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("EditTodo.fxml"));
+        Parent root = loader.load();
+        scene = new Scene(root);
+        newTodoStage = new Stage();
+        newTodoStage.setResizable(false);
+        newTodoStage.setScene(scene);
+        newTodoStage.show();
     }
     public void deleteTodo(ActionEvent e){
 
