@@ -79,7 +79,7 @@
                   <MFXTextField fx:id="usernamelimit1" floatMode="BORDER" floatingText="Username" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
                </children>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="40.0" />
                </VBox.margin>
             </HBox>
             <Label fx:id="usernamelabel" opacity="0.7" text="Limit Has Been Reached" textFill="#e40505" visible="false">
@@ -109,6 +109,9 @@
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an Account?" />
                   <Hyperlink fx:id="swsu1" onAction="#switchToSignUp" text="Sign up" />
                </children>
+               <VBox.margin>
+                  <Insets top="-35.0" />
+               </VBox.margin>
             </HBox>
          </children>
          <padding>
