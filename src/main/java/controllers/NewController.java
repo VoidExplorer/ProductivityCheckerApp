@@ -10,14 +10,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
+import productivitycheckerapp.Todo;
 import productivitycheckerapp.database;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
+import static controllers.HomeController.*;
 import static productivitycheckerapp.Main.currentUser;
-import static controllers.HomeController.todosbox_;
-import static controllers.HomeController.newTodoStage;
+
 public class NewController {
     static String title;
 
@@ -47,6 +48,11 @@ public class NewController {
                 MFXButton button = new MFXButton(title);
                 todosbox_.getChildren().add(button);
                 newTodoStage.close();
+                database.addLastTodo();
+                staticRefreshTodos();
+                for (Todo t: todos) {
+                    System.out.println(t.getDescription());
+                }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }

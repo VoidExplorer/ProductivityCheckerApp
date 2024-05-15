@@ -1,7 +1,11 @@
 package productivitycheckerapp;
 
+import controllers.SigninController;
+
 import java.sql.*;
 import java.util.ArrayList;
+
+import static controllers.HomeController.todos;
 
 public class database {
 
@@ -105,12 +109,12 @@ public class database {
         ps.setString(3, Description);
         nRows = ps.executeUpdate();
     }
-    public static void deleteTodo(String TodoID) throws SQLException {
+    public static void deleteTodo(int TodoID) throws SQLException {
         String DELETE_TODO = "DELETE FROM todos WHERE TodoID = ?";
         int nRows = 0;
         PreparedStatement ps = connection.prepareStatement(DELETE_TODO);
         Statement statement = connection.createStatement();
-        ps.setString(1, TodoID);
+        ps.setInt(1, TodoID);
         nRows = ps.executeUpdate();
     }
     public static void editTodo(String Title, String Description, int todoID) throws SQLException {
@@ -133,6 +137,7 @@ public static void addTask(String task, String dueDate) throws SQLException{
 
         nRows = ps.executeUpdate();
 
+
 }
 public static void deleteTask(int TaskID) throws SQLException {
         String DELETE_TASK = "DELETE FROM tasks WHERE TaskID = ?";
@@ -152,6 +157,17 @@ public static void editTask(String task, String dueTime, int TaskID) throws SQLE
         ps.setString(2,dueTime);
         ps.setInt(3,TaskID);
         nRows=ps.executeUpdate();
+    }
+    public static void addLastTodo() throws SQLException {
+        String SELECT_TODO = "select * from todos order by rowid desc LIMIT 1";
+        PreparedStatement ps = connection.prepareStatement(SELECT_TODO);
+        ResultSet rs = ps.executeQuery();
+        String username = rs.getString("username");
+        int todoID =   rs.getInt("TodoID");
+        String Title = rs.getString("Title");
+        String description = rs.getString("Description");
+        Todo todo = new Todo(todoID, Title, description);
+        todos.add(todo);
     }
 }
    

@@ -45,8 +45,8 @@ public class HomeController implements Initializable {
     static int currentTodoID;
     static int currentIndex;
 
-    static ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
-    public void refreshTodos(ActionEvent e){
+    public static ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
+    public void refreshTodos(){
        todosbox.getChildren().clear();
 
         for (int i = 0; i < todos.size(); i++) {
@@ -61,6 +61,49 @@ public class HomeController implements Initializable {
 
 
     }
+
+    public static void staticRefreshTodos(){
+        todosbox_.getChildren().clear();
+
+        for (int i = 0; i < todos.size(); i++) {
+            HBox hbox = new HBox();
+            hbox.setStyle("-fx-start-margin: 20px; -fx-end-margin: 20px");
+            String todoTitle = todos.get(i).getTitle();
+            MFXButton button = staticGetButton(todoTitle,i);
+            hbox.getChildren().add(button);
+            todosbox_.getChildren().add(hbox);
+        }
+        currentTodoID = todos.getFirst().getId();
+
+
+    }
+    static Label TODOTITLE_;
+    static Label TODODESC_;
+    static VBox cboxes_;
+
+    private static MFXButton staticGetButton(String todoTitle, int indx) {
+        MFXButton button = new MFXButton(todoTitle);
+        button.setOnMouseClicked(mouseEvent -> {
+            TODOTITLE_.setText(todoTitle);
+            Todo todo = todos.get(indx);
+            currentIndex = indx;
+            TODODESC_.setText(todo.getDescription());
+            cboxes_.getChildren().clear();
+            currentTodoID = todo.getId();
+            for (int i = 0; i < todo.getTasks().size(); i++) {
+                Task task = todo.getTasks().get(i);
+                MFXCheckbox taskCheckbox = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
+                taskCheckbox.setSelected(task.isCompleted());
+            }
+
+        });
+        return button;
+    }
+
+
+
+
+
     public void newTodo(ActionEvent e) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("NewTodo.fxml"));
         Parent root = loader.load();
@@ -110,13 +153,16 @@ public class HomeController implements Initializable {
     public void deleteTodo(ActionEvent e) throws SQLException {
         System.out.println(currentTodoID);
         database.connect();
-        database.deleteTodo(Integer.toString(currentTodoID));
+        database.deleteTodo(currentTodoID);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ActionEvent onload = new ActionEvent();
-        refreshTodos(onload);
+        refreshTodos();
         todosbox_ = todosbox;
+        cboxes_ = cboxes;
+        TODOTITLE_ = TODOTITLE;
+        TODODESC_ = TODODESC;
+
     }
 }
