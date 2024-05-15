@@ -113,14 +113,14 @@ public class database {
         ps.setString(1, TodoID);
         nRows = ps.executeUpdate();
     }
-    public static void editTodo(String Title, String Description) throws SQLException {
-        String EDIT_TODO = "INSERT INTO users(Title, Description) VALUES(?,?)";
-        int nRows =0;
+    public static void editTodo(String Title, String Description, int todoID) throws SQLException {
+        String EDIT_TODO = "UPDATE todos SET Title =?, Description = ? WHERE TodoID= ?";
         PreparedStatement ps = connection.prepareStatement(EDIT_TODO);
-        Statement statement = connection.createStatement();
+        connection.createStatement();
         ps.setString(1, Title);
         ps.setString(2, Description);
-        nRows = ps.executeUpdate();
+        ps.setInt(3, todoID);
+        ps.executeUpdate();
         //...
     }
 
