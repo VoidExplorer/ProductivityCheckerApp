@@ -17,17 +17,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
    <bottom>
       <HBox prefHeight="65.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <MFXButton onAction="#EditTodo" style="-fx-background-color: #2196f3; -fx-text-fill: white;" text="Edit Todo">
+            <MFXButton onAction="#EditTodo" style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-background-radius: 5px;" text="Edit Todo">
                <HBox.margin>
                   <Insets left="60.0" />
                </HBox.margin>
             </MFXButton>
-            <MFXButton onAction="#deleteTodo" style="-fx-text-fill: white; -fx-background-color: #F23939;" text="Delete Todo" />
-            <MFXButton onAction="#newTask" style="-fx-background-color: #50C878; -fx-text-fill: white;" text="Add Task" textFill="WHITE" />
+            <MFXButton onAction="#deleteTodo" style="-fx-text-fill: white; -fx-background-color: #F23939; -fx-background-radius: 5px;" text="Delete Todo" />
+            <MFXButton onAction="#newTask" style="-fx-background-color: #50C878; -fx-text-fill: white; -fx-background-radius: 5px;" text="Add Task" textFill="WHITE" />
          </children>
          <padding>
             <Insets left="50.0" />
@@ -127,8 +127,52 @@
                <children>
                   <VBox fx:id="cboxes" prefHeight="100.0" prefWidth="486.0">
                      <children>
-                        <MFXCheckbox />
-                        <MFXCheckbox />
+                        <HBox>
+                           <children>
+                              <MFXCheckbox />
+                              <MFXButton alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="73.0" style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-background-radius: 5px;" text="Edit">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F23939; -fx-text-fill: white; -fx-background-radius: 5px;" text="Delete">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </MFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <MFXCheckbox />
+                                    <MFXButton alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="73.0" style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-background-radius: 5px;" text="Edit">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </MFXButton>
+                                    <MFXButton maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="74.0" style="-fx-background-color: #F23939; -fx-text-fill: white; -fx-background-radius: 5px;" text="Delete">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </MFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </VBox>
                </children>
