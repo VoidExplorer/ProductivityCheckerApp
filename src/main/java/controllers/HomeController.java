@@ -15,8 +15,11 @@ import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
 import productivitycheckerapp.Task;
 import productivitycheckerapp.Todo;
+import productivitycheckerapp.database;
+
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -95,8 +98,10 @@ public class HomeController implements Initializable {
         newTodoStage.setScene(scene);
         newTodoStage.show();
     }
-    public void deleteTodo(ActionEvent e){
-
+    public void deleteTodo(ActionEvent e) throws SQLException {
+        System.out.println(currentTodoID);
+        database.connect();
+        database.deleteTodo(Integer.toString(currentTodoID));
     }
     public void switchToAddTask(){
 
