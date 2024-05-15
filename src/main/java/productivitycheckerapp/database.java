@@ -123,5 +123,39 @@ public class database {
         ps.executeUpdate();
         //...
     }
+public static void addTask(String task, String dueDate) throws SQLException{
+        String INSERT_TASK = "INSERT INTO tasks(Task, DueDate) VALUES(?, ?)";
+        int nRows = 0;
+        PreparedStatement ps = connection.prepareStatement(INSERT_TASK);
+        Statement statement = connection.createStatement();
+        ps.setString(1, task);
+        ps.setString(2, dueDate);
+
+        nRows = ps.executeUpdate();
 
 }
+public static void deleteTask(int TaskID) throws SQLException {
+        String DELETE_TASK = "DELETE FROM tasks WHERE TaskID = ?";
+        int nRows = 0;
+        PreparedStatement ps = connection.prepareStatement(DELETE_TASK);
+        Statement statement = connection.createStatement();
+        ps.setInt(1, TaskID);
+        nRows = ps.executeUpdate();
+
+}
+public static void editTask(String task, String dueTime, int TaskID) throws SQLException{
+        String EDIT_TASK = "UPDATE tasks SET task=?, dueTime=? WHERE TaskID=?";
+        int nRows =0;
+        PreparedStatement ps = connection.prepareStatement(EDIT_TASK);
+        Statement statement = connection.createStatement();
+        ps.setString(1,task);
+        ps.setString(2,dueTime);
+        ps.setInt(3,TaskID);
+        nRows=ps.executeUpdate();
+    }
+}
+   
+    
+
+
+
