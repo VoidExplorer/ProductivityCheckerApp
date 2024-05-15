@@ -39,8 +39,10 @@ public class HomeController implements Initializable {
     private VBox cboxes;
     @FXML
     private HBox footerbox;
+    static int currentTodoID;
+    static int currentIndex;
 
-    ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
+    static ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
     public void refreshTodos(ActionEvent e){
        todosbox.getChildren().clear();
 
@@ -52,6 +54,7 @@ public class HomeController implements Initializable {
             hbox.getChildren().add(button);
             todosbox.getChildren().add(hbox);
         }
+        currentTodoID = todos.getFirst().getId();
 
 
     }
@@ -65,17 +68,19 @@ public class HomeController implements Initializable {
         newTodoStage.show();
     }
 
-    private  MFXButton getButton(String todoTitle, int indx) {
+    private MFXButton getButton(String todoTitle, int indx) {
         MFXButton button = new MFXButton(todoTitle);
         button.setOnMouseClicked(mouseEvent -> {
             TODOTITLE.setText(todoTitle);
             Todo todo = todos.get(indx);
+            currentIndex = indx;
             TODODESC.setText(todo.getDescription());
             cboxes.getChildren().clear();
+            currentTodoID = todo.getId();
             for (int i = 0; i < todo.getTasks().size(); i++) {
                 Task task = todo.getTasks().get(i);
-                MFXCheckbox mfxcb = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
-                mfxcb.setSelected(task.isCompleted());
+                MFXCheckbox taskCheckbox = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
+                taskCheckbox.setSelected(task.isCompleted());
             }
 
         });

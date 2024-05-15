@@ -2,17 +2,24 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditController">
    <children>
       <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;">
          <children>
             <Text layoutY="-12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="25.98307228088379" />
-            <MFXTextField floatMode="BORDER" floatingText="Title" layoutX="223.0" layoutY="138.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-            <MFXTextField floatMode="BORDER" floatingText="Description" layoutX="223.0" layoutY="215.0" opacity="0.6" prefHeight="41.0" prefWidth="174.0" style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-border-color: #594BE8;" textLimit="15" />
-            <MFXButton layoutX="263.0" layoutY="336.0" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-background-radius: 5px;" text="Edit Todo" />
+            <MFXButton layoutX="263.0" layoutY="336.0" onAction="#editTodo" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-background-radius: 5px;" text="Edit Todo" />
+            <Label fx:id="titleLabel" layoutX="26.0" layoutY="29.0" prefHeight="16.0" prefWidth="278.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <MFXTextField fx:id="descriptionfield" floatMode="BORDER" floatingText="Description" layoutX="221.0" layoutY="209.0" prefHeight="41.0" prefWidth="174.0" />
+            <MFXTextField fx:id="titleField" floatMode="BORDER" floatingText="Title" layoutX="221.0" layoutY="133.0" prefHeight="35.0" prefWidth="174.0" />
          </children>
       </AnchorPane>
    </children>
