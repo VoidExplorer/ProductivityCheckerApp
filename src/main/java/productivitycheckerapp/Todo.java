@@ -45,5 +45,13 @@ public class Todo implements search {
     public Task getTask(int i){
         return this.tasks.get(i);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 
