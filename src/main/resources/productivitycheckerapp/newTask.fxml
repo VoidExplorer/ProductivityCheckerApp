@@ -6,18 +6,18 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewTaskController">
    <children>
       <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0" spacing="100.0">
          <children>
-            <MFXTextField floatMode="BORDER" floatingText="Task" prefHeight="28.0" prefWidth="198.0" />
+            <MFXTextField fx:id="taskField" floatMode="BORDER" floatingText="Task" prefHeight="28.0" prefWidth="198.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="78.0">
          <children>
-            <MFXDatePicker promptText="Due Time" />
+            <MFXDatePicker fx:id="dueTimeField" promptText="Due Time" />
          </children>
       </HBox>
-      <MFXButton style="-fx-background-color: #7a0ed9; -fx-text-fill: white;" text="Add Task" />
+      <MFXButton onAction="#addTask" style="-fx-background-color: #7a0ed9; -fx-text-fill: white;" text="Add Task" />
    </children>
 </VBox>
