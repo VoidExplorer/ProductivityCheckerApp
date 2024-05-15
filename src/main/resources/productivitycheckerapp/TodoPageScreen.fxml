@@ -27,7 +27,7 @@
                </HBox.margin>
             </MFXButton>
             <MFXButton onAction="#deleteTodo" style="-fx-text-fill: white; -fx-background-color: #F23939;" text="Delete Todo" />
-            <MFXButton onAction="#switchToAddTask" style="-fx-background-color: #50C878; -fx-text-fill: white;" text="Add Task" textFill="WHITE" />
+            <MFXButton onAction="#newTask" style="-fx-background-color: #50C878; -fx-text-fill: white;" text="Add Task" textFill="WHITE" />
          </children>
          <padding>
             <Insets left="50.0" />

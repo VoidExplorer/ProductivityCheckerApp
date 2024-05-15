@@ -70,6 +70,15 @@ public class HomeController implements Initializable {
         newTodoStage.setScene(scene);
         newTodoStage.show();
     }
+    public void newTask(ActionEvent e) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("newTask.fxml"));
+        Parent root = loader.load();
+        scene = new Scene(root);
+        newTodoStage = new Stage();
+        newTodoStage.setResizable(false);
+        newTodoStage.setScene(scene);
+        newTodoStage.show();
+    }
 
     private MFXButton getButton(String todoTitle, int indx) {
         MFXButton button = new MFXButton(todoTitle);
@@ -103,9 +112,7 @@ public class HomeController implements Initializable {
         database.connect();
         database.deleteTodo(Integer.toString(currentTodoID));
     }
-    public void switchToAddTask(){
 
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ActionEvent onload = new ActionEvent();

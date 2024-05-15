@@ -124,7 +124,7 @@ public class database {
         //...
     }
 public static void addTask(String task, String dueDate) throws SQLException{
-        String INSERT_TASK = "INSERT INTO tasks(Task, DueDate) VALUES(?, ?)";
+        String INSERT_TASK = "INSERT INTO tasks(Task, DueTime) VALUES(?, ?)";
         int nRows = 0;
         PreparedStatement ps = connection.prepareStatement(INSERT_TASK);
         Statement statement = connection.createStatement();
