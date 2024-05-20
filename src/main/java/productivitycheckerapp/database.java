@@ -112,17 +112,14 @@ public class database {
         ps.executeUpdate();
         //...
     }
-public static void addTask(String task, String dueDate) throws SQLException{
-        String INSERT_TASK = "INSERT INTO tasks(Task, DueTime) VALUES(?, ?)";
-        int nRows = 0;
+public static void addTask(int id, String task, String dueDate) throws SQLException{
+        String INSERT_TASK = "INSERT INTO tasks(TodoID, Task, DueTime) VALUES(?, ?, ?)";
         PreparedStatement ps = connection.prepareStatement(INSERT_TASK);
-        Statement statement = connection.createStatement();
-        ps.setString(1, task);
-        ps.setString(2, dueDate);
-
-        nRows = ps.executeUpdate();
-
-
+        connection.createStatement();
+        ps.setInt(1, id);
+        ps.setString(2, task);
+        ps.setString(3, dueDate);
+        ps.executeUpdate();
 }
 public static void deleteTask(int TaskID) throws SQLException {
         String DELETE_TASK = "DELETE FROM tasks WHERE TaskID = ?";
