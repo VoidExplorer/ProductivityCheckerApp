@@ -49,10 +49,11 @@ public class NewController {
                 todosbox_.getChildren().add(button);
                 newTodoStage.close();
                 database.addLastTodo();
-                staticRefreshTodos();
+                refreshTodos();
                 for (Todo t: todos) {
                     System.out.println(t.getDescription());
                 }
+
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }

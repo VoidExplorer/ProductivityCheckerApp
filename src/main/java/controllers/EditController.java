@@ -1,12 +1,10 @@
 package controllers;
 
-import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import productivitycheckerapp.Todo;
 import productivitycheckerapp.database;
 
 import java.net.URL;
@@ -36,7 +34,7 @@ public class EditController implements Initializable {
                 database.editTodo(title, description, currentTodoID);
                 newTodoStage.close();
                 database.reloadTodos();
-                staticRefreshTodos();
+                refreshTodos();
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }
