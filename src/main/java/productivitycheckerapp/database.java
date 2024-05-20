@@ -154,6 +154,20 @@ public static void editTask(String task, String dueTime, int TaskID) throws SQLE
         Todo todo = new Todo(todoID, Title, description);
         todos.add(todo);
     }
+
+    public static void reloadTodos() throws SQLException{
+        todos.clear();
+        String LOAD_TODOS = "SELECT * FROM todos";
+        PreparedStatement ps = connection.prepareStatement(LOAD_TODOS);
+        ResultSet todoResultSet = ps.executeQuery();
+        while (todoResultSet.next()) {
+            int todoID =   todoResultSet.getInt("TodoID");
+            String Title = todoResultSet.getString("Title");
+            String description = todoResultSet.getString("Description");
+            Todo todo = new Todo(todoID, Title, description);
+            todos.add(todo);
+        }
+    }
 }
    
     
