@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import static controllers.HomeController.*;
+import static controllers.SigninController.loggedInUser;
 
 public class EditController implements Initializable {
     @FXML
@@ -33,7 +34,7 @@ public class EditController implements Initializable {
             try {
                 database.editTodo(title, description, currentTodoID);
                 newTodoStage.close();
-                database.reloadTodos();
+                database.reloadTodos(loggedInUser.getUsername());
                 refreshTodos();
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;

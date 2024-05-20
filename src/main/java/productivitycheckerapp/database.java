@@ -152,10 +152,11 @@ public static void editTask(String task, String dueTime, int TaskID) throws SQLE
         todos.add(todo);
     }
 
-    public static void reloadTodos() throws SQLException{
+    public static void reloadTodos(String username) throws SQLException{
         todos.clear();
-        String LOAD_TODOS = "SELECT * FROM todos";
+        String LOAD_TODOS = "SELECT * FROM todos WHERE username = ?";
         PreparedStatement ps = connection.prepareStatement(LOAD_TODOS);
+        ps.setString(1, username);
         ResultSet todoResultSet = ps.executeQuery();
         while (todoResultSet.next()) {
             int todoID =   todoResultSet.getInt("TodoID");
