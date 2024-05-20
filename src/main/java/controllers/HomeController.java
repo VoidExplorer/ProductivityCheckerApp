@@ -78,8 +78,34 @@ public class HomeController implements Initializable {
             for (int i = 0; i < todo.getTasks().size(); i++) {
                 Task task = todo.getTasks().get(i);
                 MFXCheckbox taskCheckbox = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
+                System.out.println(task.isCompleted());
                 taskCheckbox.setSelected(task.isCompleted());
                 cboxes_.getChildren().add(taskCheckbox);
+                System.out.println("smth happened");
+                taskCheckbox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+                    if(observable.getValue()) {
+                        String text = taskCheckbox.getText();
+                        text = text.substring(0, text.indexOf("|")-1);
+                        System.out.println("Checkbox with title " + taskCheckbox.getText() + " was selected");
+                        try {
+                            database.updateTaskStatus(currentTodoID, text, true);
+                        } catch (SQLException e) {
+                            System.out.println("Database error: " + e.getMessage());
+                        }
+                        refreshTodos();
+                    }
+                    else {
+                        String text = taskCheckbox.getText();
+                        text = text.substring(0, text.indexOf("|")-1);
+                        System.out.println("Checkbox with title " + taskCheckbox.getText() + " was unselected");
+                        try {
+                            database.updateTaskStatus(currentTodoID, text, false);
+                        } catch (SQLException e) {
+                            System.out.println("Database error: " + e.getMessage());
+                        }
+                        refreshTodos();
+                    }
+                });
             }
 
         });
