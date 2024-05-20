@@ -46,7 +46,7 @@ public class database {
                                 psss.setInt(1, rresultSet.getInt("TodoId"));
                                 try (ResultSet rrresultSet = psss.executeQuery()) {
                                     while (rrresultSet.next()) {
-                                        Task task = new Task(rrresultSet.getString("Task"), rrresultSet.getString("DueTime"));
+                                        Task task = new Task(rrresultSet.getString("Task"), rrresultSet.getString("DueTime"), rrresultSet.getBoolean("Status"));
                                         todo.addTask(task);
                                     }
                                 }

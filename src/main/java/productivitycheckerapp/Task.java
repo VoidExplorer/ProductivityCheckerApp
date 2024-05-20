@@ -9,9 +9,10 @@ public class Task implements search {
     private String taskText, dueTime;
     private boolean isCompleted = false;
 
-    Task(String taskText, String dueTime){
+    Task(String taskText, String dueTime, boolean isCompleted){
         this.taskText = taskText;
         this.dueTime  = dueTime;
+        this.isCompleted = isCompleted;
     }
 
     public void checkCompleted() {
