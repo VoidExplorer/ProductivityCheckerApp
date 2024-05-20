@@ -26,7 +26,6 @@ public class NewTaskController {
     private MFXTextField taskField;
     @FXML
     private MFXDatePicker dueTimeField;
-
     private Stage stage;
 
     public void addTask(ActionEvent event) {
@@ -37,11 +36,11 @@ public class NewTaskController {
         }
         else {
             try {
-                database.addTask(taskField.getText(),dueTimeField.getText());
-                MFXCheckbox chbox = new MFXCheckbox(taskField.getText());
+                database.addTask(currentTodoID,taskField.getText(),dueTimeField.getText());
+                MFXCheckbox chbox = new MFXCheckbox(taskField.getText() + " | Due : "+dueTimeField.getText());
                 cboxes_.getChildren().add(chbox);
             } catch (SQLException e) {
-                System.out.println(e.getMessage());;
+                System.out.println(e.getMessage());
             }
         }
     }

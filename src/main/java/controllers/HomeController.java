@@ -1,7 +1,10 @@
 package controllers;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -40,15 +43,14 @@ public class HomeController implements Initializable {
     private static HBox hbox1;
     @FXML
     private VBox cboxes;
-    @FXML
-    private HBox footerbox;
+
     static int currentTodoID;
     static int currentIndex;
 
     public static ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
+
     public void refreshTodos(){
        todosbox.getChildren().clear();
-
         for (int i = 0; i < todos.size(); i++) {
             HBox hbox = new HBox();
             hbox.setStyle("-fx-start-margin: 20px; -fx-end-margin: 20px");
@@ -58,8 +60,6 @@ public class HomeController implements Initializable {
             todosbox.getChildren().add(hbox);
         }
         currentTodoID = todos.getFirst().getId();
-
-
     }
 
     public static void staticRefreshTodos(){
@@ -94,6 +94,7 @@ public class HomeController implements Initializable {
                 Task task = todo.getTasks().get(i);
                 MFXCheckbox taskCheckbox = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
                 taskCheckbox.setSelected(task.isCompleted());
+                cboxes_.getChildren().add(taskCheckbox);
             }
 
         });
@@ -134,8 +135,10 @@ public class HomeController implements Initializable {
             currentTodoID = todo.getId();
             for (int i = 0; i < todo.getTasks().size(); i++) {
                 Task task = todo.getTasks().get(i);
+                System.out.println(task.getTaskText() + " | Due: " + task.getDueTime());
                 MFXCheckbox taskCheckbox = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
                 taskCheckbox.setSelected(task.isCompleted());
+                cboxes.getChildren().add(taskCheckbox);
             }
 
         });
@@ -151,9 +154,9 @@ public class HomeController implements Initializable {
         newTodoStage.show();
     }
     public void deleteTodo(ActionEvent e) throws SQLException {
-        System.out.println(currentTodoID);
-        database.connect();
         database.deleteTodo(currentTodoID);
+        todos.remove(currentIndex);
+        refreshTodos();
     }
 
     @Override
@@ -163,6 +166,7 @@ public class HomeController implements Initializable {
         cboxes_ = cboxes;
         TODOTITLE_ = TODOTITLE;
         TODODESC_ = TODODESC;
-
+        MFXCheckbox chbx = new MFXCheckbox();
+        cboxes.getChildren().add(chbx);
     }
 }
