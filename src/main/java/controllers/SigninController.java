@@ -39,6 +39,7 @@ public class SigninController implements Initializable {
     private Label incorrectCredentialsLabel;
 
     public static User loggedInUser;
+    public static boolean isStudent;
     @FXML
     public void switchToSignUp(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signup.fxml"));
@@ -66,6 +67,7 @@ public class SigninController implements Initializable {
             if (Objects.equals(uname, database.users.get(i).getUsername()) && Objects.equals(pass, database.users.get(i).getPassword())) {
                 valid = true;
                 loggedInUser = database.users.get(i);
+                isStudent = database.checkStudent(uname);
                 break;
             }
         }
