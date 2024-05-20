@@ -35,6 +35,8 @@ public class EditController implements Initializable {
             try {
                 database.editTodo(title, description, currentTodoID);
                 newTodoStage.close();
+                database.reloadTodos();
+                staticRefreshTodos();
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }
