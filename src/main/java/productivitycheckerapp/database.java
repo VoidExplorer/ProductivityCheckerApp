@@ -165,6 +165,16 @@ public static void editTask(String task, String dueTime, int TaskID) throws SQLE
             todos.add(todo);
         }
     }
+
+    public static void updateTaskStatus(int TodoID, String taskText, boolean status) throws SQLException {
+        String UPDATE_TASK = "UPDATE tasks SET Status = ? WHERE (TodoID, Task) = (?,?)";
+        PreparedStatement ps = connection.prepareStatement(UPDATE_TASK);
+        connection.createStatement();
+        ps.setBoolean(1,status);
+        ps.setInt(2,TodoID);
+        ps.setString(3,taskText);
+        ps.executeUpdate();
+    }
 }
    
     
