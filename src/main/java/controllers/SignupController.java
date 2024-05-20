@@ -17,10 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import productivitycheckerapp.MFXResourcesLoader;
-import productivitycheckerapp.Student;
-import productivitycheckerapp.User;
-import productivitycheckerapp.database;
+import productivitycheckerapp.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,6 +26,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static controllers.HomeController.refreshTodos;
+import static controllers.HomeController.todos;
 import static controllers.SceneController.scene;
 import static controllers.SigninController.isStudent;
 import static controllers.SigninController.loggedInUser;
@@ -203,6 +202,8 @@ public class SignupController implements Initializable {
             database.addUser(uname,pass, studentToggle.selectedProperty().getValue());
             loggedInUser = database.users.getLast();
             isStudent = database.checkStudent(uname);
+            database.addTodo(uname, ("Welcome, " + uname), "This is a sample Todo to help get you started");
+            database.reloadTodos(uname);
             switchToTodoPage();
         }else{
             if(userExist){
