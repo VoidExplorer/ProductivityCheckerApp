@@ -1,6 +1,7 @@
 package controllers;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
@@ -16,8 +17,8 @@ import productivitycheckerapp.database;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import static controllers.HomeController.todosbox_;
-import static controllers.HomeController.newTodoStage;
+import static controllers.HomeController.*;
+
 public class NewTaskController {
     static String task;
 
@@ -37,9 +38,8 @@ public class NewTaskController {
         else {
             try {
                 database.addTask(taskField.getText(),dueTimeField.getText());
-                MFXButton button = new MFXButton(task);
-                todosbox_.getChildren().add(button);
-                newTodoStage.close();
+                MFXCheckbox chbox = new MFXCheckbox(taskField.getText());
+                cboxes_.getChildren().add(chbox);
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }
