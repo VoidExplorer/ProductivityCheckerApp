@@ -82,6 +82,7 @@ public class HomeController implements Initializable {
                 taskCheckbox.setSelected(task.isCompleted());
                 cboxes_.getChildren().add(taskCheckbox);
                 System.out.println("smth happened");
+                int finalI = i;
                 taskCheckbox.selectedProperty().addListener((observable, oldValue, newValue) -> {
                     if(observable.getValue()) {
                         String text = taskCheckbox.getText();
@@ -89,6 +90,7 @@ public class HomeController implements Initializable {
                         System.out.println("Checkbox with title " + taskCheckbox.getText() + " was selected");
                         try {
                             database.updateTaskStatus(currentTodoID, text, true);
+                            todos.get(currentIndex).getTasks().get(finalI).checkCompleted();
                         } catch (SQLException e) {
                             System.out.println("Database error: " + e.getMessage());
                         }
@@ -100,6 +102,7 @@ public class HomeController implements Initializable {
                         System.out.println("Checkbox with title " + taskCheckbox.getText() + " was unselected");
                         try {
                             database.updateTaskStatus(currentTodoID, text, false);
+                            todos.get(currentIndex).getTasks().get(finalI).uncheckCompleted();
                         } catch (SQLException e) {
                             System.out.println("Database error: " + e.getMessage());
                         }
