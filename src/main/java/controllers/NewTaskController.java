@@ -43,7 +43,8 @@ public class NewTaskController implements Initializable {
         else {
             try {
                 database.addTask(currentTodoID,taskField.getText(),dueTimeField.getText());
-                MFXCheckbox chbox = new MFXCheckbox(taskField.getText() + " | Due : "+dueTimeField.getText() + "\tCourse: "+courseComboBox.getSelectionModel().getSelectedItem());
+                String course = isStudent ? ("\tCourse: "+courseComboBox.getSelectionModel()) : "";
+                MFXCheckbox chbox = new MFXCheckbox(taskField.getText() + " | Due : "+dueTimeField.getText() + course);
                 cboxes_.getChildren().add(chbox);
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
