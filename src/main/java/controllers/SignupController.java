@@ -18,6 +18,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import productivitycheckerapp.MFXResourcesLoader;
+import productivitycheckerapp.Student;
+import productivitycheckerapp.User;
 import productivitycheckerapp.database;
 
 import java.io.IOException;
@@ -28,6 +30,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static controllers.SceneController.scene;
+import static controllers.SigninController.isStudent;
+import static controllers.SigninController.loggedInUser;
 import static io.github.palexdev.materialfx.utils.StringUtils.containsAny;
 
 
@@ -197,6 +201,8 @@ public class SignupController implements Initializable {
         }
         if(!userExist && Objects.equals(pass, cpass)){
             database.addUser(uname,pass, studentToggle.selectedProperty().getValue());
+            loggedInUser = database.users.getLast();
+            isStudent = database.checkStudent(uname);
             switchToTodoPage();
         }else{
             if(userExist){
