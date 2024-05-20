@@ -28,7 +28,6 @@ import static controllers.SceneController.scene;
 
 public class Main extends Application {
 
-    public static User currentUser;
     @Override
     public void start(Stage stage) throws IOException {
         CSSFX.start();

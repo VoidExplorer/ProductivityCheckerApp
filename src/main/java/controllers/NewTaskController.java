@@ -16,7 +16,6 @@ import productivitycheckerapp.database;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import static productivitycheckerapp.Main.currentUser;
 import static controllers.HomeController.todosbox_;
 import static controllers.HomeController.newTodoStage;
 public class NewTaskController {

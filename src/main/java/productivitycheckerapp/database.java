@@ -62,22 +62,7 @@ public class database {
     }
 
 
-    public static void readTodos() throws SQLException {
-        String SELECT_TODO = "SELECT * from todos";
-        PreparedStatement ps = connection.prepareStatement(SELECT_TODO);
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = ps.executeQuery();
-        System.out.println(resultSet.getString(2));
-        while (resultSet.next()) {
-            System.out.println(
-                    resultSet.getString("username") + "\t" +
-                            resultSet.getString("TodoID") +"\t" +
-                            resultSet.getString("Title") +"\t" +
-                            resultSet.getString("Description"));
-        }
 
-
-    }
 
     public static void addUser(String username, String password, boolean student) throws SQLException {
         String INSERT_USER = "INSERT INTO users(username, password, Student) VALUES(?, ?, ?)";

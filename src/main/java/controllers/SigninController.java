@@ -23,10 +23,11 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static controllers.SceneController.scene;
-import static productivitycheckerapp.Main.currentUser;
 
 
 public class SigninController implements Initializable {
+
+    // declare from gui
     private Stage stage;
     @FXML
     private MFXTextField usernamelimit1;
@@ -57,10 +58,10 @@ public class SigninController implements Initializable {
     public void loginClick() throws SQLException, IOException {
         String uname = usernamelimit1.getText();
         String pass = passwordField.getText();
-        database.connect();
         database.readDb();
         System.out.println(database.users.get(0).getUsername() + " " + database.users.get(0).getPassword());
         boolean valid = false;
+        // iterate in users to find the valid user
         for (int i = 0; i < database.users.size(); i++) {
             if (Objects.equals(uname, database.users.get(i).getUsername()) && Objects.equals(pass, database.users.get(i).getPassword())) {
                 valid = true;
@@ -69,11 +70,7 @@ public class SigninController implements Initializable {
             }
         }
         if (valid){
-            // temporary ArrayList for testing
-            ArrayList<Todo> t = new ArrayList<>();
-            currentUser = new User(uname, pass, t);
             switchToHome();
-            System.out.println("Valid ya a5oya");
         }else{
             System.out.println("Wrong Username or Password");
             incorrectCredentialsLabel.setVisible(true);
@@ -81,6 +78,6 @@ public class SigninController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        SceneController.setFieldLimit(usernamelimit1, usernamelabel, 15);
+        SceneController.setFieldLimit(usernamelimit1, usernamelabel, 25);
     }
 }
