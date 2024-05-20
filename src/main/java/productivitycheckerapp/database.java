@@ -175,6 +175,28 @@ public static void editTask(String task, String dueTime, int TaskID) throws SQLE
         ps.setString(3,taskText);
         ps.executeUpdate();
     }
+
+    public static boolean checkStudent(String username) throws SQLException {
+        String check = "SELECT Student FROM Users WHERE username = ?";
+        PreparedStatement ps = connection.prepareStatement(check);
+        connection.createStatement();
+        ps.setString(1, username);
+        ResultSet rs = ps.executeQuery();
+        return rs.getBoolean("Student");
+    }
+
+    public static ArrayList<String> getCourses(String username) throws SQLException {
+        String check = "SELECT courses FROM studentCourses WHERE username = ?";
+        PreparedStatement ps = connection.prepareStatement(check);
+        connection.createStatement();
+        ps.setString(1, username);
+        ResultSet rs = ps.executeQuery();
+        ArrayList<String> courses = new ArrayList<>();
+        while (rs.next()) {
+            courses.add(rs.getString("Courses"));
+        }
+        return courses;
+    }
 }
    
     
