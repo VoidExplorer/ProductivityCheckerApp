@@ -5,6 +5,7 @@ import controllers.SigninController;
 import java.sql.*;
 import java.util.ArrayList;
 
+import static controllers.HomeController.currentIndex;
 import static controllers.HomeController.todos;
 
 public class database {
@@ -150,6 +151,17 @@ public static void editTask(String task, String dueTime, int TaskID) throws SQLE
         String description = rs.getString("Description");
         Todo todo = new Todo(todoID, Title, description);
         todos.add(todo);
+    }
+
+    public static void addLastTask() throws SQLException {
+        String SELECT_TODO = "select * from tasks order by rowid desc LIMIT 1";
+        PreparedStatement ps = connection.prepareStatement(SELECT_TODO);
+        ResultSet rs = ps.executeQuery();
+        String taskText = rs.getString("Task");
+        boolean status =  rs.getBoolean("Status");
+        String dueTime = rs.getString("DueTime");
+        Task task = new Task(taskText, dueTime, status);
+        todos.get(currentIndex).getTasks().add(task);
     }
 
     public static void reloadTodos(String username) throws SQLException{
