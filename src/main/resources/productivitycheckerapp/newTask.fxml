@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.*?>
-<?import javafx.scene.layout.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXSlider?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewTaskController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewTaskController">
    <children>
       <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0" spacing="100.0">
          <children>
@@ -12,9 +20,18 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="78.0">
          <children>
-            <MFXDatePicker fx:id="dueTimeField" promptText="Due Time" />
+            <MFXDatePicker fx:id="dueDateField" allowEdit="false" promptText="Due Date" />
          </children>
       </HBox>
+      <MFXSlider fx:id="timeSlider" decimalPrecision="2" max="23.5" prefHeight="14.0" prefWidth="377.0" showMajorTicks="true" sliderMode="SNAP_TO_TICKS" tickUnit="0.5" unitIncrement="5.0" />
+      <Label prefHeight="24.0" prefWidth="66.0" text="Due Time">
+         <VBox.margin>
+            <Insets top="-20.0" />
+         </VBox.margin>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
       <MFXComboBox fx:id="courseComboBox" floatingText="Course" prefHeight="40.0" prefWidth="148.0" visible="false" />
       <MFXButton onAction="#addTask" style="-fx-background-color: #7a0ed9; -fx-text-fill: white;" text="Add Task" />
    </children>
