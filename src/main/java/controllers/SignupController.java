@@ -27,7 +27,6 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static controllers.HomeController.refreshTodos;
-import static controllers.HomeController.todos;
 import static controllers.SceneController.scene;
 import static controllers.SigninController.isStudent;
 import static controllers.SigninController.loggedInUser;
@@ -35,7 +34,6 @@ import static io.github.palexdev.materialfx.utils.StringUtils.containsAny;
 
 
 public class SignupController implements Initializable {
-    private Stage stage;
 
 
     @FXML
@@ -44,8 +42,6 @@ public class SignupController implements Initializable {
     private MFXPasswordField passwordField;
     @FXML
     private MFXPasswordField confirmpasswordField;
-    @FXML
-    private Label usernameLimitLabel;
     @FXML
     private Label passwordLimitLabel;
     @FXML
@@ -163,7 +159,7 @@ public class SignupController implements Initializable {
     public void switchToSignIn(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signin.fxml"));
         Parent root = loader.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, scene.getWidth(), scene.getHeight());
         stage.setScene(scene);
     }

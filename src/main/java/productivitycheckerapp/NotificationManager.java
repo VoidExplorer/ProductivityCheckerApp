@@ -1,9 +1,6 @@
 package productivitycheckerapp;
 
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.time.*;
 import java.util.Date;
 import java.util.concurrent.Executors;
@@ -12,9 +9,9 @@ import java.util.concurrent.TimeUnit;
 
 public class NotificationManager {
 
-    private SystemTray systemTray = SystemTray.getSystemTray();
-    private Image icon = Toolkit.getDefaultToolkit().getImage("Todo.png");
-    private TrayIcon trayIcon = (new TrayIcon(icon));
+    private final SystemTray systemTray = SystemTray.getSystemTray();
+    private final Image icon = Toolkit.getDefaultToolkit().getImage("Todo.png");
+    private final TrayIcon trayIcon = (new TrayIcon(icon));
     String tooltip = "";
     TrayIcon.MessageType messageType = TrayIcon.MessageType.NONE;
 

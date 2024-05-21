@@ -29,14 +29,13 @@ public class NewTaskController implements Initializable {
     private MFXTextField taskField;
     @FXML
     private MFXDatePicker dueDateField;
-    private Stage stage;
     @FXML
     private MFXComboBox<String> courseComboBox;
     @FXML
     private MFXSlider timeSlider;
 
 
-    public void addTask(ActionEvent event) throws SQLException {
+    public void addTask() throws SQLException {
         task = taskField.getText();
         String time = Double.toString(timeSlider.getValue());
         String[] t = time.split("\\.");

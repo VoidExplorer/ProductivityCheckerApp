@@ -32,14 +32,11 @@ public class HomeController implements Initializable {
 
     static VBox todosbox_;
     @FXML
-    private VBox todosbox;
-    private Stage stage;
+    private VBox todosbox;;
     @FXML
     private Label TODOTITLE;
     @FXML
     private Label TODODESC;
-    @FXML
-    private static HBox hbox1;
     @FXML
     private VBox cboxes;
 
@@ -68,8 +65,6 @@ public class HomeController implements Initializable {
     static Label TODOTITLE_;
     static Label TODODESC_;
     static VBox cboxes_;
-
-    private static final PseudoClass PASTDUE = PseudoClass.getPseudoClass("pastdue");
 
 
     private static MFXButton getButton(String todoTitle, int indx) {
@@ -142,7 +137,7 @@ public class HomeController implements Initializable {
 
 
 
-    public void newTodo(ActionEvent e) throws IOException {
+    public void newTodo() throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("NewTodo.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
@@ -151,7 +146,7 @@ public class HomeController implements Initializable {
         newTodoStage.setScene(scene);
         newTodoStage.show();
     }
-    public void newTask(ActionEvent e) throws IOException {
+    public void newTask() throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("newTask.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
@@ -161,7 +156,7 @@ public class HomeController implements Initializable {
         newTodoStage.show();
     }
 
-    public void EditTodo(ActionEvent e) throws IOException {
+    public void EditTodo() throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("EditTodo.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
@@ -170,7 +165,7 @@ public class HomeController implements Initializable {
         newTodoStage.setScene(scene);
         newTodoStage.show();
     }
-    public void deleteTodo(ActionEvent e) throws SQLException {
+    public void deleteTodo() throws SQLException {
         database.deleteTodo(currentTodoID);
         todos.remove(currentIndex);
         refreshTodos();

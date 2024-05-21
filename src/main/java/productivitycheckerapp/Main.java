@@ -6,25 +6,12 @@ import io.github.palexdev.materialfx.theming.JavaFXThemes;
 import io.github.palexdev.materialfx.theming.MaterialFXStylesheets;
 import io.github.palexdev.materialfx.theming.UserAgentBuilder;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Scanner;
 
 import static controllers.SceneController.scene;
 
@@ -50,20 +37,17 @@ public class Main extends Application {
         stage.setMinWidth(600);
         stage.setMinHeight(400);
         stage.show();
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent windowEvent) {
-                System.out.println("Stage closed");
-                try {
-                    controllers.closeController.bringClosePopUp();
-                } catch (IOException e) {
-                    System.out.println("Error bringing pop-up: " + e.getMessage());
-                }
+        stage.setOnCloseRequest(windowEvent -> {
+            System.out.println("Stage closed");
+            try {
+                controllers.closeController.bringClosePopUp();
+            } catch (IOException e) {
+                System.out.println("Error bringing pop-up: " + e.getMessage());
             }
         });
     }
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         try {
             database.connect();
             launch();
