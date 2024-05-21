@@ -33,7 +33,7 @@ public class EditController implements Initializable {
         else {
             try {
                 database.editTodo(title, description, currentTodoID);
-                newTodoStage.close();
+                tempStage.close();
                 database.reloadTodos(loggedInUser.getUsername());
                 refreshTodos();
             } catch (SQLException e) {

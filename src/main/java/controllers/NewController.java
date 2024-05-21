@@ -47,7 +47,7 @@ public class NewController {
                 database.addTodo(loggedInUser.getUsername(), title, description);
                 MFXButton button = new MFXButton(title);
                 todosbox_.getChildren().add(button);
-                newTodoStage.close();
+                tempStage.close();
                 database.addLastTodo();
                 refreshTodos();
                 for (Todo t: todos) {

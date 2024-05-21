@@ -1,8 +1,6 @@
 package controllers;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
-import javafx.css.PseudoClass;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +26,7 @@ import java.util.ResourceBundle;
 import static controllers.SceneController.scene;
 
 public class HomeController implements Initializable {
-    public static Stage newTodoStage;
+    public static Stage tempStage;
 
     static VBox todosbox_;
     @FXML
@@ -141,29 +139,29 @@ public class HomeController implements Initializable {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("NewTodo.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
-        newTodoStage = new Stage();
-        newTodoStage.setResizable(false);
-        newTodoStage.setScene(scene);
-        newTodoStage.show();
+        tempStage = new Stage();
+        tempStage.setResizable(false);
+        tempStage.setScene(scene);
+        tempStage.show();
     }
     public void newTask() throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("newTask.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
-        newTodoStage = new Stage();
-        newTodoStage.setResizable(false);
-        newTodoStage.setScene(scene);
-        newTodoStage.show();
+        tempStage = new Stage();
+        tempStage.setResizable(false);
+        tempStage.setScene(scene);
+        tempStage.show();
     }
 
     public void EditTodo() throws IOException {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("EditTodo.fxml"));
         Parent root = loader.load();
         scene = new Scene(root);
-        newTodoStage = new Stage();
-        newTodoStage.setResizable(false);
-        newTodoStage.setScene(scene);
-        newTodoStage.show();
+        tempStage = new Stage();
+        tempStage.setResizable(false);
+        tempStage.setScene(scene);
+        tempStage.show();
     }
     public void deleteTodo() throws SQLException {
         database.deleteTodo(currentTodoID);
