@@ -44,6 +44,7 @@ public class EditController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // get the old name before editing
         titleLabel.setText("Edit: " + todos.get(currentIndex).getTitle());
         System.out.println(currentIndex);
     }

@@ -81,14 +81,12 @@ public class HomeController implements Initializable {
                 System.out.println(task.isCompleted());
                 taskCheckbox.setSelected(task.isCompleted());
                 cboxes_.getChildren().add(taskCheckbox);
-                System.out.println("smth happened");
                 int finalI = i;
                 taskCheckbox.selectedProperty().addListener((observable, oldValue, newValue) -> {
                     if(observable.getValue()) {
                         String text = taskCheckbox.getText();
                         text = text.substring(0, text.indexOf("|")-1);
-                        System.out.println("Checkbox with title " + taskCheckbox.getText() + " was selected");
-                        try {
+                       try {
                             database.updateTaskStatus(currentTodoID, text, true);
                             todos.get(currentIndex).getTasks().get(finalI).checkCompleted();
                         } catch (SQLException e) {

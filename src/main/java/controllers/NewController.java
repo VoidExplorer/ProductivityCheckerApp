@@ -28,13 +28,6 @@ public class NewController {
     private MFXTextField descriptionField;
 
     private Stage stage;
-    public void switchToNew(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("newTask.fxml"));
-        Parent root = loader.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-    }
 
     public void addTodo(ActionEvent event) {
         title = titleField.getText();
@@ -50,6 +43,7 @@ public class NewController {
                 newTodoStage.close();
                 database.addLastTodo();
                 refreshTodos();
+                // iterating todos
                 for (Todo t: todos) {
                     System.out.println(t.getDescription());
                 }

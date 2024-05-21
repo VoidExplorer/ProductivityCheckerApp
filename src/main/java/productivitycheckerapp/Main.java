@@ -31,7 +31,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         CSSFX.start();
-
+        // Setting up UserAgentBuilder with themes and configurations
         UserAgentBuilder.builder()
                 .themes(JavaFXThemes.MODENA)
                 .themes(MaterialFXStylesheets.forAssemble(true))
@@ -54,7 +54,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
         try {
             database.connect();
-            launch();
+            launch();   // Launching the JavaFX application
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

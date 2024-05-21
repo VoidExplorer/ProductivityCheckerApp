@@ -169,22 +169,7 @@ public class SignupController implements Initializable {
         stage.setScene(new Scene(root));
         stage.show();
     }
- /*   public void signUp(ActionEvent event) throws SQLException {
-        // confirm that the limit label isn't visible to make sure that the length is less the maximum
-        if (usernameLimitLabel.isVisible())
-            System.out.println("Maximum username limit reached");
-        else if (passwordLimitLabel.isVisible())
-            System.out.println("Maximum password limit reached");
-        else {
-            if (passwordField.getText().equals(confirmpasswordField.getText()) ) {
-                String username = usernameField.getText();
-                String password = passwordField.getText();
-                database.addUser(username, password);
-            }
-            else
-                System.out.println("Password Don't Match");
-        }
-    } */
+
     public void register() throws SQLException, IOException {
         String uname = usernameField.getText();
         String pass = passwordField.getText();

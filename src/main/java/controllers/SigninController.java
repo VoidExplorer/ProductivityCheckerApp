@@ -56,6 +56,8 @@ public class SigninController implements Initializable {
         scene = new Scene(root, scene.getWidth(), scene.getHeight());
         stage.setScene(scene);
     }
+
+    // perform login operations and validation
     public void loginClick() throws SQLException, IOException {
         String uname = usernamelimit1.getText();
         String pass = passwordField.getText();
