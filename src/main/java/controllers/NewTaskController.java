@@ -70,6 +70,7 @@ public class NewTaskController implements Initializable {
             } catch (AWTException e) {
                 System.out.println("Error in Notification Manager: " + e.getMessage());
             }
+            tempStage.close();
             database.addLastTask();
             refreshTodos();
         }
