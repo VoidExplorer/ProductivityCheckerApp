@@ -62,7 +62,7 @@ public class NotificationManager {
         if (delay > 0) {
             scheduler.schedule(task, delay, TimeUnit.MILLISECONDS);
         } else {
-            System.err.println("The time you have set has already passed");
+            System.err.println("WARNING: The time you have set has already passed");
             scheduler.shutdown();
         }
 
