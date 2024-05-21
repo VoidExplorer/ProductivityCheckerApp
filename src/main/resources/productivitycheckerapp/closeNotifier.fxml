@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="146.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.closeController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="517.0">
+         <children>
+            <Label prefHeight="52.0" prefWidth="508.0" text="Would you like the program to keep running in the background until all notifications are sent?" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="517.0" spacing="30.0">
+         <children>
+            <MFXButton onAction="#yes" style="-fx-background-color: #7a0ed9; -fx-text-fill: white;" text="Yes" />
+            <MFXButton onAction="#no" style="-fx-background-color: #EF6E6B; -fx-text-fill: white;" text="No" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
