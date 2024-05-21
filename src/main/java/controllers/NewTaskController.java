@@ -36,7 +36,7 @@ public class NewTaskController implements Initializable {
     private MFXSlider timeSlider;
 
 
-    public void addTask(ActionEvent event) {
+    public void addTask(ActionEvent event) throws SQLException {
         task = taskField.getText();
         String time = Double.toString(timeSlider.getValue());
         String[] t = time.split("\\.");
@@ -71,6 +71,8 @@ public class NewTaskController implements Initializable {
             } catch (AWTException e) {
                 System.out.println("Error in Notification Manager: " + e.getMessage());
             }
+            database.addLastTask();
+            refreshTodos();
         }
     }
 

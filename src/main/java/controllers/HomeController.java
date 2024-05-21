@@ -44,7 +44,7 @@ public class HomeController implements Initializable {
     private VBox cboxes;
 
     static int currentTodoID;
-    static int currentIndex;
+    public static int currentIndex;
 
     public static ArrayList<Todo> todos =  SigninController.loggedInUser.getTodos();
 
