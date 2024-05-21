@@ -39,6 +39,7 @@ public class EditController implements Initializable {
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }
+            updateCurrentTodo(title, description);
         }
     }
 

@@ -129,8 +129,9 @@ public class HomeController implements Initializable {
         return button;
     }
 
-    public static void updateCurrentTodo() {
-
+    public static void updateCurrentTodo(String todoTitle, String todoDescription) {
+        TODOTITLE_.setText(todoTitle);
+        TODODESC_.setText(todoDescription);
     }
 
 
