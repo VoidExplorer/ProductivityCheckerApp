@@ -3,18 +3,18 @@ package controllers;
 import io.github.palexdev.materialfx.controls.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import productivitycheckerapp.MFXResourcesLoader;
+import productivitycheckerapp.NotificationManager;
 import productivitycheckerapp.database;
 
-import java.io.IOException;
+import java.awt.*;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -28,26 +28,48 @@ public class NewTaskController implements Initializable {
     @FXML
     private MFXTextField taskField;
     @FXML
-    private MFXDatePicker dueTimeField;
+    private MFXDatePicker dueDateField;
     private Stage stage;
     @FXML
     private MFXComboBox<String> courseComboBox;
+    @FXML
+    private MFXSlider timeSlider;
 
 
     public void addTask(ActionEvent event) {
         task = taskField.getText();
-        String description = dueTimeField.getText();
+        String time = Double.toString(timeSlider.getValue());
+        String[] t = time.split("\\.");
+        int minuteValue = Integer.parseInt(t[1])*6;
+        if (minuteValue == 0) {
+            t[1] += "0";
+        }
+        else {
+            t[1] = Integer.toString(minuteValue);
+        }
+        String dueTime = t[0] + ":" + t[1];
+        String description = dueDateField.getText();
         if(task.isEmpty() || description.isEmpty()){
             System.out.println("Empty fields");
         }
         else {
             try {
-                database.addTask(currentTodoID,taskField.getText(),dueTimeField.getText());
-                String course = isStudent ? ("\tCourse: "+courseComboBox.getSelectionModel()) : "";
-                MFXCheckbox chbox = new MFXCheckbox(taskField.getText() + " | Due : "+dueTimeField.getText() + course);
+                database.addTask(currentTodoID,taskField.getText(), (dueDateField.getText() + " at " + dueTime ));
+                String course = isStudent ? ("\tCourse: "+courseComboBox.getSelectionModel().getSelectedItem()) : "";
+                MFXCheckbox chbox = new MFXCheckbox(taskField.getText() + " | Due : "+ dueDateField.getText() +  " at " + dueTime + "\t"+ course);
+                NotificationManager taskNotification = new NotificationManager("Task");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM d, yyyy");
+                DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("H:m");
+                LocalDate taskDate = LocalDate.parse(dueDateField.getText(), formatter);
+                LocalTime taskTime = LocalTime.parse(dueTime, timeFormatter);
+                LocalDateTime dateTime = LocalDateTime.of(taskDate, taskTime);
+                taskNotification.scheduleNotification(taskField.getText(), "Task Deadline has arrived", dateTime);
+
                 cboxes_.getChildren().add(chbox);
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
+            } catch (AWTException e) {
+                System.out.println("Error in Notification Manager: " + e.getMessage());
             }
         }
     }

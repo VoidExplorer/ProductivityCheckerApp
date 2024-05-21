@@ -1,6 +1,7 @@
 package controllers;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
+import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,14 +12,16 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import productivitycheckerapp.MFXResourcesLoader;
-import productivitycheckerapp.Task;
-import productivitycheckerapp.Todo;
-import productivitycheckerapp.database;
+import productivitycheckerapp.*;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -66,6 +69,9 @@ public class HomeController implements Initializable {
     static Label TODODESC_;
     static VBox cboxes_;
 
+    private static final PseudoClass PASTDUE = PseudoClass.getPseudoClass("pastdue");
+
+
     private static MFXButton getButton(String todoTitle, int indx) {
         MFXButton button = new MFXButton(todoTitle);
         button.setOnMouseClicked(mouseEvent -> {
@@ -78,15 +84,32 @@ public class HomeController implements Initializable {
             for (int i = 0; i < todo.getTasks().size(); i++) {
                 Task task = todo.getTasks().get(i);
                 MFXCheckbox taskCheckbox = new MFXCheckbox(task.getTaskText() + " | Due: " + task.getDueTime());
+                String text = taskCheckbox.getText();
+                String dueDate = text.substring(text.indexOf("|") + 7, text.lastIndexOf("at")-1);
+                System.out.println("dueDate: " + dueDate);
+                String dueTime = text.substring(text.lastIndexOf(" ") + 1);
+                System.out.println("dueTime: " + dueTime);
+                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MMM d, yyyy");
+                DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("H:m");
+                LocalDate taskDate = LocalDate.parse(dueDate, dateFormatter);
+                LocalTime taskTime = LocalTime.parse(dueTime, timeFormatter);
+                LocalDateTime taskDateTime = LocalDateTime.of(taskDate, taskTime);
+                if (taskDateTime.isBefore(LocalDateTime.now())) {
+                    taskCheckbox.setText(taskCheckbox.getText() + "\tDEADLINE HAS PASSED");
+                } else {
+                    try {
+                        NotificationManager notificationManager = new NotificationManager("Task");
+                        notificationManager.scheduleNotification(text, "Deadline has been reached", taskDateTime);
+                    } catch (AWTException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
                 System.out.println(task.isCompleted());
                 taskCheckbox.setSelected(task.isCompleted());
                 cboxes_.getChildren().add(taskCheckbox);
-                System.out.println("smth happened");
                 int finalI = i;
                 taskCheckbox.selectedProperty().addListener((observable, oldValue, newValue) -> {
                     if(observable.getValue()) {
-                        String text = taskCheckbox.getText();
-                        text = text.substring(0, text.indexOf("|")-1);
                         System.out.println("Checkbox with title " + taskCheckbox.getText() + " was selected");
                         try {
                             database.updateTaskStatus(currentTodoID, text, true);
@@ -97,8 +120,6 @@ public class HomeController implements Initializable {
                         refreshTodos();
                     }
                     else {
-                        String text = taskCheckbox.getText();
-                        text = text.substring(0, text.indexOf("|")-1);
                         System.out.println("Checkbox with title " + taskCheckbox.getText() + " was unselected");
                         try {
                             database.updateTaskStatus(currentTodoID, text, false);
@@ -115,7 +136,9 @@ public class HomeController implements Initializable {
         return button;
     }
 
+    public static void updateCurrentTodo() {
 
+    }
 
 
 
