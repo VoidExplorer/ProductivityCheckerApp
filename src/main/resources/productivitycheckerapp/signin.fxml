@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SigninController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SigninController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -90,7 +90,7 @@
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="300.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#594be8" glyphName="KEY" size="15" />
-                  <MFXPasswordField id="passwordField" fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
+                  <MFXPasswordField id="passwordField" fx:id="passwordField" allowCopy="true" allowCut="true" allowPaste="true" floatMode="BORDER" floatingText="Password" onAction="#loginClick" prefHeight="42.0" prefWidth="167.0" textLimit="20" />
                </children>
                <VBox.margin>
                   <Insets />

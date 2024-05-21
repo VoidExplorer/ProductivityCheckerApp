@@ -5,10 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import productivitycheckerapp.Task;
 import productivitycheckerapp.database;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static controllers.HomeController.*;
@@ -36,10 +38,18 @@ public class EditController implements Initializable {
                 tempStage.close();
                 database.reloadTodos(loggedInUser.getUsername());
                 refreshTodos();
+                ArrayList<Task> tasksfromgui = new ArrayList<>();
+                todos.get(currentIndex).setTitle(title);
+                todos.get(currentIndex).setDescription(description);
+                todos.get(currentIndex).setId(currentTodoID);
+                System.out.println("current ID: " + currentTodoID);
+                System.out.println("current Index: " + currentIndex);
+
             } catch (SQLException e) {
                 System.out.println(e.getMessage());;
             }
             updateCurrentTodo(title, description);
+            refreshTodos();
         }
     }
 

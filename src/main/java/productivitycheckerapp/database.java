@@ -4,8 +4,7 @@ package productivitycheckerapp;
 import java.sql.*;
 import java.util.ArrayList;
 
-import static controllers.HomeController.currentIndex;
-import static controllers.HomeController.todos;
+import static controllers.HomeController.*;
 
 public class database {
 
@@ -201,6 +200,25 @@ public static void editTask(String task, String dueTime, int TaskID) throws SQLE
         }
         return courses;
     }
+
+    public static void reloadTasks(int todoID) throws SQLException{
+        todos.get(todoID).getTasks().clear();
+        String LOAD_TASK = "SELECT * FROM tasks WHERE TodoID = ?";
+        PreparedStatement ps = connection.prepareStatement(LOAD_TASK);
+        ps.setInt(1, todoID);
+        ResultSet taskResultSet = ps.executeQuery();
+        while (taskResultSet.next()) {
+            String taskText = taskResultSet.getString("Task");
+            Boolean status = taskResultSet.getBoolean("Status");
+            String dueTime = taskResultSet.getString("DueTime");
+            Task task = new Task(taskText, dueTime, status);
+            todos.get(todoID).getTasks().add(task);
+            System.out.println("added " + task.getTaskText());
+
+        }
+    }
+
+
 }
    
     

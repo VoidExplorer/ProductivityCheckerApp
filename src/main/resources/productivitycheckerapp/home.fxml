@@ -2,7 +2,6 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import io.github.palexdev.materialfx.controls.MFXCircleToggleNode?>
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import io.github.palexdev.mfxcore.controls.Label?>
@@ -59,14 +58,11 @@
                         <FontAwesomeIconView fill="#867f7f" glyphName="SEARCH" layoutX="139.0" layoutY="32.0" size="16" />
                      </children>
                   </AnchorPane>
-                  <MFXCircleToggleNode id="customCircle" contentDisplay="CENTER" gap="0.0" graphicTextGap="0.0" minHeight="-Infinity" prefHeight="46.0" prefWidth="57.0" size="16.0" text=" " textPosition="TOP">
-                     <padding>
-                        <Insets bottom="28.0" />
-                     </padding>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="GEAR" size="24" textOrigin="CENTER" />
-                     </graphic>
-                  </MFXCircleToggleNode>
+                  <MFXButton contentDisplay="CENTER" minWidth="-Infinity" onAction="#logout" prefHeight="27.0" prefWidth="54.0" style="-fx-background-color: #594BE8; -fx-text-fill: white; -fx-border-radius: 3; -fx-background-radius: 5px;" text="logout">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </MFXButton>
                </children>
                <GridPane.margin>
                   <Insets right="10.0" />

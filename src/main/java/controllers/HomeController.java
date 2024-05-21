@@ -1,9 +1,11 @@
 package controllers;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -38,6 +40,8 @@ public class HomeController implements Initializable {
     @FXML
     private VBox cboxes;
 
+    private Stage stage;
+
     static int currentTodoID;
     public static int currentIndex;
 
@@ -56,7 +60,6 @@ public class HomeController implements Initializable {
             hbox.getChildren().add(button);
             todosbox_.getChildren().add(hbox);
         }
-        currentTodoID = todos.getFirst().getId();
 
 
     }
@@ -179,5 +182,14 @@ public class HomeController implements Initializable {
         MFXCheckbox chbx = new MFXCheckbox();
         cboxes.getChildren().add(chbx);
         refreshTodos();
+    }
+
+    public void logout(ActionEvent event) throws IOException, SQLException {
+        FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("signin.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, scene.getWidth(), scene.getHeight());
+        stage.setScene(scene);
+        database.readDb();
     }
 }
