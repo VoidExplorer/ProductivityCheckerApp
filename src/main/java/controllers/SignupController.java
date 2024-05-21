@@ -60,6 +60,8 @@ public class SignupController implements Initializable {
     private static final String[] lowerChar = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ");
     private static final String[] digits = "0 1 2 3 4 5 6 7 8 9".split(" ");
     private static final String[] specialCharacters = "! @ # & ( ) – [ { } ]: ; ' , ? / * ~ $ ^ + = < > -".split(" ");
+    boolean strongPassword = false;
+    boolean passwordMatch = false;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -117,6 +119,7 @@ public class SignupController implements Initializable {
             if (newValue) {
                 passwordLimitLabel.setVisible(false);
                 passwordField.pseudoClassStateChanged(INVALID, false);
+                strongPassword = true;
             }
         });
 
@@ -127,6 +130,7 @@ public class SignupController implements Initializable {
                 passwordField.pseudoClassStateChanged(INVALID, true);
                 passwordLimitLabel.setText(constraints.getFirst().getMessage());
                 passwordLimitLabel.setVisible(true);
+                strongPassword = false;
             }
             }
         });
@@ -145,10 +149,12 @@ public class SignupController implements Initializable {
             if(observable.getValue().equals(passwordField.getText()) || observable.getValue().isEmpty()) {
                 passwordMatchLabel.setVisible(false);
                 confirmpasswordField.setStyle("-fx-border-color: #594BE8");
+                passwordMatch = true;
             }
             else {
                 passwordMatchLabel.setVisible(true);
                 confirmpasswordField.setStyle("-fx-border-color: red");
+                passwordMatch = false;
             }
         });
     }
@@ -166,8 +172,8 @@ public class SignupController implements Initializable {
         FXMLLoader loader = new FXMLLoader(MFXResourcesLoader.loadURL("home.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) usernameField.getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        scene = new Scene(root, scene.getWidth(), scene.getHeight());
+        stage.setScene(scene);
     }
  /*   public void signUp(ActionEvent event) throws SQLException {
         // confirm that the limit label isn't visible to make sure that the length is less the maximum
@@ -189,27 +195,32 @@ public class SignupController implements Initializable {
         String uname = usernameField.getText();
         String pass = passwordField.getText();
         String cpass = confirmpasswordField.getText();
-        database.connect();
         database.readDb();
         boolean userExist = false;
-        for (int i = 0; i < database.users.size(); i++) {
-            if (Objects.equals(database.users.get(i).getUsername(), uname)){
-                userExist = true;
-                break;
+        if (strongPassword && passwordMatch) {
+            for (int i = 0; i < database.users.size(); i++) {
+                if (Objects.equals(database.users.get(i).getUsername(), uname)) {
+                    userExist = true;
+                    break;
+                }
             }
-        }
-        if(!userExist && Objects.equals(pass, cpass)){
-            database.addUser(uname,pass, studentToggle.selectedProperty().getValue());
-            loggedInUser = database.users.getLast();
-            isStudent = database.checkStudent(uname);
-            database.addTodo(uname, ("Welcome, " + uname), "This is a sample Todo to help get you started");
-            database.reloadTodos(uname);
-            switchToTodoPage();
-        }else{
-            if(userExist){
-                System.out.println("user already exist");
-            } else if (!Objects.equals(pass, cpass)) {
-                System.out.println("Passwords doesn't match");
+            if (!userExist && Objects.equals(pass, cpass)) {
+                database.addUser(uname, pass, studentToggle.selectedProperty().getValue());
+                database.addTodo(uname, ("Welcome, " + uname),
+                        "This is a sample Todo to help get you started");
+                database.readDb();
+                loggedInUser = database.users.getLast();
+                System.out.println("Logged in user: " + loggedInUser.getUsername());
+                isStudent = database.checkStudent(uname);
+                database.reloadTodos(uname);
+                switchToTodoPage();
+                refreshTodos();
+            } else {
+                if (userExist) {
+                    System.out.println("user already exist");
+                } else if (!Objects.equals(pass, cpass)) {
+                    System.out.println("Passwords doesn't match");
+                }
             }
         }
     }
